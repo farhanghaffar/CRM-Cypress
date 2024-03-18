@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T02:37:51.304Z",
+    "end": "2024-03-07T02:38:22.695Z",
+    "duration": 31391,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "03e9a842-e42e-46e3-a305-072e6d5090bb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\locations\\locations.regions.spec.js",
+      "file": "cypress\\e2e\\admin\\locations\\locations.regions.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "34d2d8cd-3a2c-48d7-b016-1bce95e01696",
+          "title": "locations.regions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "64b58c4d-f524-4459-a0a8-87e8d3c8b8c0",
+              "title": "region functionality",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "add region",
+                  "fullTitle": "locations.regions region functionality add region",
+                  "timedOut": null,
+                  "duration": 7012,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const regionData = {\n  regionName: (0, _helpers.stringGen)(10)\n};\ncy.navigateAndCheckURL(_urls.LOCATION_URL);\ncy.selectLocationTab('regions');\ncy.addRegion(regionData);\ncy.wait('@saveRegion').then(res => {\n  cy.selectLocationTab('regions');\n  cy.checkRegionData('data', res.response.body, regionData.regionName);\n  cy.deleteRegionAPI(res.response.body, globalUserId, subscriberId);\n});",
+                  "err": {},
+                  "uuid": "f3de7c11-e7e8-4249-8b38-7d903f440846",
+                  "parentUUID": "64b58c4d-f524-4459-a0a8-87e8d3c8b8c0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "edit region",
+                  "fullTitle": "locations.regions region functionality edit region",
+                  "timedOut": null,
+                  "duration": 5266,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const newRegionName = (0, _helpers.stringGen)(13);\nconst editedRegionName = (0, _helpers.stringGen)(6);\ncy.addRegionAPI(newRegionName, globalUserId, subscriberId).then(res => {\n  cy.navigateAndCheckURL(_urls.LOCATION_URL);\n  cy.selectLocationTab('regions');\n  cy.checkRegionData('data', res.body, newRegionName);\n  cy.editRegion(subscriberId, res.body, editedRegionName);\n  cy.wait('@saveRegion');\n  cy.selectLocationTab('regions');\n  cy.checkRegionData('data', res.body, editedRegionName);\n  cy.deleteRegionAPI(res.body, globalUserId, subscriberId);\n});",
+                  "err": {},
+                  "uuid": "802f5c85-2c08-4483-b943-a636597a41fc",
+                  "parentUUID": "64b58c4d-f524-4459-a0a8-87e8d3c8b8c0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "delete region on page",
+                  "fullTitle": "locations.regions region functionality delete region on page",
+                  "timedOut": null,
+                  "duration": 8650,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const newRegionName = (0, _helpers.stringGen)(15);\ncy.addRegionAPI(newRegionName, globalUserId, subscriberId).then(res => {\n  cy.navigateAndCheckURL(_urls.LOCATION_URL);\n  cy.selectLocationTab('regions');\n  cy.checkRegionData('data', res.body, newRegionName);\n  cy.deleteRegion('regionPage', res.body, subscriberId);\n  cy.checkRegionData('no-data', res.body, newRegionName);\n});",
+                  "err": {},
+                  "uuid": "77a45966-0f5a-4ced-8017-cf55b5619c97",
+                  "parentUUID": "64b58c4d-f524-4459-a0a8-87e8d3c8b8c0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "delete region on specific region page",
+                  "fullTitle": "locations.regions region functionality delete region on specific region page",
+                  "timedOut": null,
+                  "duration": 10383,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const newRegionName = (0, _helpers.stringGen)(15);\ncy.addRegionAPI(newRegionName, globalUserId, subscriberId).then(res => {\n  cy.navigateAndCheckURL(_urls.LOCATION_URL);\n  cy.selectLocationTab('regions');\n  cy.checkRegionData('data', res.body, newRegionName);\n  cy.deleteRegion('specificPage', res.body, subscriberId);\n  cy.checkRegionData('no-data', res.body, newRegionName);\n});",
+                  "err": {},
+                  "uuid": "7130f4ac-b308-40a6-a27a-0dfea294325c",
+                  "parentUUID": "64b58c4d-f524-4459-a0a8-87e8d3c8b8c0",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f3de7c11-e7e8-4249-8b38-7d903f440846",
+                "802f5c85-2c08-4483-b943-a636597a41fc",
+                "77a45966-0f5a-4ced-8017-cf55b5619c97",
+                "7130f4ac-b308-40a6-a27a-0dfea294325c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 31311,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

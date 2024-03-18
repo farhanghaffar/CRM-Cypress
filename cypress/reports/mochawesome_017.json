@@ -1,0 +1,543 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 13,
+    "passes": 5,
+    "pending": 0,
+    "failures": 8,
+    "start": "2024-03-07T02:18:38.207Z",
+    "end": "2024-03-07T02:27:34.638Z",
+    "duration": 536431,
+    "testsRegistered": 15,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "4f6a1e75-ccb9-4adb-8dc2-068321300c0f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\quotes\\quotes.spec.js",
+      "file": "cypress\\e2e\\quotes\\quotes.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1cff369b-a16b-40dc-a0bb-e0dea14a6f34",
+          "title": "quotes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "9dcad67e-cb62-4840-89e4-5ab3f6d10e49",
+              "title": "validation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "5d174b74-5bc3-4fe4-a9e4-8304475d5b5b",
+                  "title": "quotes page",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "No quotes returned displays the no quotes page",
+                      "fullTitle": "quotes validation quotes page No quotes returned displays the no quotes page",
+                      "timedOut": null,
+                      "duration": 67275,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.intercept('api/quote/GetQuotes', {\n  \"CurrencySymbol\": \"$\",\n  \"IsLastPage\": true,\n  \"OverdueGlobalQuoteCount\": 0,\n  \"OverdueGlobalQuotes\": [],\n  \"GlobalQuotes\": [],\n  \"GlobalQuotesExtended\": []\n});\ncy.reload();\ncy.noQuotesPageDisplayed();",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "00ebdc8c-1e6b-45bb-8661-caa4561766ef",
+                      "parentUUID": "5d174b74-5bc3-4fe4-a9e4-8304475d5b5b",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Add quote button in body displays form",
+                      "fullTitle": "quotes validation quotes page Add quote button in body displays form",
+                      "timedOut": null,
+                      "duration": 60223,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.intercept('api/quote/GetQuotes', {\n  \"CurrencySymbol\": \"$\",\n  \"IsLastPage\": true,\n  \"OverdueGlobalQuoteCount\": 0,\n  \"OverdueGlobalQuotes\": [],\n  \"GlobalQuotes\": [],\n  \"GlobalQuotesExtended\": []\n});\ncy.reload();\ncy.openQuotesForm('body');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "b84d5911-487a-4240-ae01-18e04a705c4b",
+                      "parentUUID": "5d174b74-5bc3-4fe4-a9e4-8304475d5b5b",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Add quote button in header displays form",
+                      "fullTitle": "quotes validation quotes page Add quote button in header displays form",
+                      "timedOut": null,
+                      "duration": 58619,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.openQuotesForm('header');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "108b30bc-fea6-4694-b420-27ead41cb819",
+                      "parentUUID": "5d174b74-5bc3-4fe4-a9e4-8304475d5b5b",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [],
+                  "failures": [
+                    "00ebdc8c-1e6b-45bb-8661-caa4561766ef",
+                    "b84d5911-487a-4240-ae01-18e04a705c4b",
+                    "108b30bc-fea6-4694-b420-27ead41cb819"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 186117,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "146c2595-d07d-44fe-8a96-101436dc97c8",
+                  "title": "quotes form",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Quote name, company and valid until date are required",
+                      "fullTitle": "quotes validation quotes form Quote name, company and valid until date are required",
+                      "timedOut": null,
+                      "duration": 58295,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.quotesFormRequiredFields('quotes');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `quotes form`",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `quotes form`\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "d68c275a-3622-4107-a6c7-95baaf581bc1",
+                      "parentUUID": "146c2595-d07d-44fe-8a96-101436dc97c8",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Cancel out of form using cross",
+                      "fullTitle": "quotes validation quotes form Cancel out of form using cross",
+                      "timedOut": null,
+                      "duration": 0,
+                      "state": "skipped",
+                      "speed": null,
+                      "pass": false,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.closeQuotesForm('');",
+                      "err": {},
+                      "uuid": "dce92911-9cff-4437-bcd2-e0b0911a6f7d",
+                      "parentUUID": "146c2595-d07d-44fe-8a96-101436dc97c8",
+                      "isHook": false,
+                      "skipped": true
+                    },
+                    {
+                      "title": "Cancel out of form via cancel button",
+                      "fullTitle": "quotes validation quotes form Cancel out of form via cancel button",
+                      "timedOut": null,
+                      "duration": 0,
+                      "state": "skipped",
+                      "speed": null,
+                      "pass": false,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.closeQuotesForm('body');",
+                      "err": {},
+                      "uuid": "12e4882a-9e75-4c77-b9d0-9a7acbd47f4c",
+                      "parentUUID": "146c2595-d07d-44fe-8a96-101436dc97c8",
+                      "isHook": false,
+                      "skipped": true
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [],
+                  "failures": [
+                    "d68c275a-3622-4107-a6c7-95baaf581bc1"
+                  ],
+                  "pending": [],
+                  "skipped": [
+                    "dce92911-9cff-4437-bcd2-e0b0911a6f7d",
+                    "12e4882a-9e75-4c77-b9d0-9a7acbd47f4c"
+                  ],
+                  "duration": 58295,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "d61bbc0e-7134-4c25-9d70-efdf43a9b34b",
+              "title": "quotes filtering",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "0b15c9ed-22f8-428e-a415-3b916e8d5b02",
+                  "title": "status",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Filter by User",
+                      "fullTitle": "quotes quotes filtering status Filter by User",
+                      "timedOut": null,
+                      "duration": 17908,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.quoteSelectUserFilter(salesRepUser.details.name);\ncy.wait('@getQuotes');\ncy.quoteBodyContainsItem(quoteUser.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteAccepted.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteRecieved.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteOpen.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteDeclined.quoteName);",
+                      "err": {},
+                      "uuid": "fdeae12d-4ff1-445f-b4eb-2a1f7d57b20f",
+                      "parentUUID": "0b15c9ed-22f8-428e-a415-3b916e8d5b02",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Filter by Accepted",
+                      "fullTitle": "quotes quotes filtering status Filter by Accepted",
+                      "timedOut": null,
+                      "duration": 57197,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.quoteSelectStatusFilter('Accepted');\ncy.wait('@getQuotes');\ncy.quoteBodyContainsItem(quoteAccepted.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteUser.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteRecieved.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteOpen.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteDeclined.quoteName);",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "4f74659c-9506-4839-849f-00016d5a42be",
+                      "parentUUID": "0b15c9ed-22f8-428e-a415-3b916e8d5b02",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Filter by Recieved",
+                      "fullTitle": "quotes quotes filtering status Filter by Recieved",
+                      "timedOut": null,
+                      "duration": 5630,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.quoteSelectStatusFilter('Received');\ncy.wait('@getQuotes');\ncy.quoteBodyContainsItem(quoteRecieved.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteAccepted.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteUser.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteOpen.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteDeclined.quoteName);",
+                      "err": {},
+                      "uuid": "36c68770-57d9-4ab8-b152-f4b1a616c052",
+                      "parentUUID": "0b15c9ed-22f8-428e-a415-3b916e8d5b02",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Filter by Open",
+                      "fullTitle": "quotes quotes filtering status Filter by Open",
+                      "timedOut": null,
+                      "duration": 5663,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.quoteSelectStatusFilter('Open');\ncy.wait('@getQuotes');\ncy.quoteBodyContainsItem(quoteOpen.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteAccepted.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteRecieved.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteUser.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteDeclined.quoteName);",
+                      "err": {},
+                      "uuid": "a1e576bd-5969-43df-b69c-8da52fcbb811",
+                      "parentUUID": "0b15c9ed-22f8-428e-a415-3b916e8d5b02",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Filter by Declined",
+                      "fullTitle": "quotes quotes filtering status Filter by Declined",
+                      "timedOut": null,
+                      "duration": 5083,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.quoteSelectStatusFilter('Declined');\ncy.wait('@getQuotes');\ncy.quoteBodyContainsItem(quoteDeclined.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteAccepted.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteRecieved.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteOpen.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteUser.quoteName);",
+                      "err": {},
+                      "uuid": "d15cdb7b-1f73-4b5f-b557-97fab4654f4b",
+                      "parentUUID": "0b15c9ed-22f8-428e-a415-3b916e8d5b02",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Filter by All",
+                      "fullTitle": "quotes quotes filtering status Filter by All",
+                      "timedOut": null,
+                      "duration": 57447,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.quoteSelectStatusFilter('All');\ncy.wait('@getQuotes');\ncy.quoteBodyContainsItem(quoteUser.quoteName);\ncy.quoteBodyContainsItem(quoteAccepted.quoteName);\ncy.quoteBodyContainsItem(quoteRecieved.quoteName);\ncy.quoteBodyContainsItem(quoteOpen.quoteName);\ncy.quoteBodyContainsItem(quoteDeclined.quoteName);",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "496be243-ae60-429f-8cbb-a7bb5bb41ac1",
+                      "parentUUID": "0b15c9ed-22f8-428e-a415-3b916e8d5b02",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "fdeae12d-4ff1-445f-b4eb-2a1f7d57b20f",
+                    "36c68770-57d9-4ab8-b152-f4b1a616c052",
+                    "a1e576bd-5969-43df-b69c-8da52fcbb811",
+                    "d15cdb7b-1f73-4b5f-b557-97fab4654f4b"
+                  ],
+                  "failures": [
+                    "4f74659c-9506-4839-849f-00016d5a42be",
+                    "496be243-ae60-429f-8cbb-a7bb5bb41ac1"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 148928,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "02d62793-dece-4b7f-901b-0fac5b9bc0c1",
+                  "title": "keyword",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Valid search",
+                      "fullTitle": "quotes quotes filtering keyword Valid search",
+                      "timedOut": null,
+                      "duration": 5013,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "searchQuotes(quoteAccepted.quoteName);\ncy.wait('@getQuotes');\ncy.quoteBodyContainsItem(quoteAccepted.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteUser.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteRecieved.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteOpen.quoteName);\ncy.quoteBodyDoesNotContainItem(quoteDeclined.quoteName);",
+                      "err": {},
+                      "uuid": "fef63353-ddcc-4207-88f8-663e4fac3c89",
+                      "parentUUID": "02d62793-dece-4b7f-901b-0fac5b9bc0c1",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Invalid search",
+                      "fullTitle": "quotes quotes filtering keyword Invalid search",
+                      "timedOut": null,
+                      "duration": 58894,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "searchQuotes((0, _helpers.stringGen)(10));\ncy.wait('@getQuotes');\ncy.noQuotesPageDisplayed();",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "5f530dd1-aac1-4a26-a27a-4f8bbb886bc6",
+                      "parentUUID": "02d62793-dece-4b7f-901b-0fac5b9bc0c1",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "fef63353-ddcc-4207-88f8-663e4fac3c89"
+                  ],
+                  "failures": [
+                    "5f530dd1-aac1-4a26-a27a-4f8bbb886bc6"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 63907,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a10d0eff-867c-4a20-a1ee-74fc965db6c6",
+              "title": "quotes functionality",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Add a quote",
+                  "fullTitle": "quotes quotes functionality Add a quote",
+                  "timedOut": null,
+                  "duration": 71999,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "let quoteId;\nconst quoteData = {\n  quoteName: (0, _helpers.stringGen)(8),\n  quoteStatus: 'accepted',\n  quoteCode: 'test',\n  quoteMode: 'sea',\n  quoteCompany: companyName,\n  quoteCompanySearch: 'Quote',\n  quoteContact: contactName,\n  quoteContactSearch: 'Quote',\n  quoteDeal: dealName,\n  quoteDealSearch: 'Quote',\n  quoteValidTo: (0, _moment.default)().format('DD-MMM-YY'),\n  quoteAmount: '1000',\n  quoteDetails: `QUOTE DETAILS ${(0, _helpers.stringGen)(8)}`,\n  quoteConditions: `CONDITIONS ${(0, _helpers.stringGen)(10)}`,\n  quoteNotes: `NEW NOTE FOR QUOTE ${(0, _helpers.stringGen)(20)}`\n};\nconst {\n  quoteName,\n  quoteStatus,\n  quoteAmount\n} = quoteData;\ncy.intercept('/api/quote/SaveQuote/').as('saveQuote');\ncy.openQuotesForm('header');\ncy.fillForm(_forms.quotesForm, quoteData);\ncy.quoteSaveForm();\ncy.wait('@saveQuote').then(xhr => {\n  quoteId = xhr.response.body.QuoteIdGlobal;\n  const createdFormat = 'ddd, DD-MMM-YY';\n  cy.validateQuoteOverview(quoteId, (0, _helpers.convertFirstCharOfStringToUpperCase)(quoteStatus), (0, _helpers.convertFirstCharOfStringToUpperCase)(quoteName), (0, _moment.default)().format(createdFormat), (0, _moment.default)().format(createdFormat), dealName, companyName, contactName, `$${(0, _helpers.numberWithCommas)(quoteAmount)}`);\n  cy.deleteQuoteApi(subscriberId, salesManagerUserData.userId, salesManagerUserData.globalUserId, quoteId);\n});",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                    "diff": null
+                  },
+                  "uuid": "b6228f87-292c-4285-8cf0-bf89f81e710a",
+                  "parentUUID": "a10d0eff-867c-4a20-a1ee-74fc965db6c6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "b6228f87-292c-4285-8cf0-bf89f81e710a"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 71999,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

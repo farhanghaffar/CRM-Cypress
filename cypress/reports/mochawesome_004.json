@@ -1,0 +1,477 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 14,
+    "passes": 12,
+    "pending": 1,
+    "failures": 1,
+    "start": "2024-03-06T23:24:00.495Z",
+    "end": "2024-03-06T23:25:59.490Z",
+    "duration": 118995,
+    "testsRegistered": 14,
+    "passPercent": 92.3076923076923,
+    "pendingPercent": 7.142857142857142,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ccef2f4c-a143-4f4c-afff-b9c363b16963",
+      "title": "",
+      "fullFile": "cypress\\e2e\\companies\\company-overview.spec.js",
+      "file": "cypress\\e2e\\companies\\company-overview.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8b58e578-b4c7-4269-b685-76ede816d0b7",
+          "title": "company-companyOverview",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "d465ea00-cf6d-4314-9bca-ccfa26639b00",
+              "title": "Panel view",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should test the panel view listings",
+                  "fullTitle": "company-companyOverview Panel view should test the panel view listings",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "1b8446c8-ce42-4595-b8d6-329c38341c92",
+                  "parentUUID": "d465ea00-cf6d-4314-9bca-ccfa26639b00",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [
+                "1b8446c8-ce42-4595-b8d6-329c38341c92"
+              ],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "2e62bb84-d1f5-4953-b1bc-fc282d3d7a51",
+              "title": "Filters",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Search for company name",
+                  "fullTitle": "company-companyOverview Filters Search for company name",
+                  "timedOut": null,
+                  "duration": 8037,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.searchAndCheckCompanyName(companyName);",
+                  "err": {},
+                  "uuid": "ea95421e-58d4-4118-a764-eb02ad7fb6e6",
+                  "parentUUID": "2e62bb84-d1f5-4953-b1bc-fc282d3d7a51",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Search for company city",
+                  "fullTitle": "company-companyOverview Filters Search for company city",
+                  "timedOut": null,
+                  "duration": 4128,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const citySearch = 'San Pedro';\ncy.searchAndCheckCompanyCity(citySearch);",
+                  "err": {},
+                  "uuid": "7c7066b4-132a-4551-9ce1-f0de3b2b1a11",
+                  "parentUUID": "2e62bb84-d1f5-4953-b1bc-fc282d3d7a51",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Search for company post code",
+                  "fullTitle": "company-companyOverview Filters Search for company post code",
+                  "timedOut": null,
+                  "duration": 10119,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const postCodeSearch = (0, _helpers.stringGen)(10);\nconst companyName = `POST CODE ${(0, _helpers.stringGen)(4)}${(0, _helpers.numGen)(2)}`;\ncy.request({\n  method: 'POST',\n  url: '/api/company/SaveCompany',\n  body: {\n    'Company': {\n      'SubscriberId': subscriberId,\n      'CompanyId': 987654,\n      'CompanyName': `${companyName}`,\n      'Address': 'Test123',\n      'City': 'San Pedro',\n      'Phone': '',\n      'PostalCode': postCodeSearch,\n      'CountryName': 'United States',\n      'User': salesRepUserId,\n      'CompanyTypes': 'Carrier',\n      'Industry': 'Chemical',\n      'Source': 'LinkedIn',\n      'Fax': '',\n      'Website': '',\n      'CampaignName': '',\n      'UpdateUserId': salesRepUserId,\n      'Division': '',\n      'CompanyCode': '',\n      'StateProvince': '',\n      'Active': false,\n      'UpdateUserIdGlobal': salesRepGlobalUserId,\n      'CompanyOwnerUserId': salesRepUserId,\n      'IsCustomer': false,\n      'Comments': '',\n      'Competitors': \"\",\n      'ParentCode': ''\n    },\n    'UpdatedUserIdGlobal': salesRepGlobalUserId\n  }\n}).then(response => {\n  cy.wait(4000);\n  cy.searchAndCheckCompanyPostcode(postCodeSearch, companyName);\n  cy.deleteCompanyAPI(response.body.CompanyId, salesRepGlobalUserId, subscriberId);\n});",
+                  "err": {},
+                  "uuid": "483d72fb-be0e-4c9c-9b20-6a05fb101fcd",
+                  "parentUUID": "2e62bb84-d1f5-4953-b1bc-fc282d3d7a51",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ea95421e-58d4-4118-a764-eb02ad7fb6e6",
+                "7c7066b4-132a-4551-9ce1-f0de3b2b1a11",
+                "483d72fb-be0e-4c9c-9b20-6a05fb101fcd"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 22284,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "df2b5743-b152-43bb-aa2c-da5997426a8a",
+              "title": "Widgets - no data",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Last Activity doesn't display with no event or task",
+                  "fullTitle": "company-companyOverview Widgets - no data Last Activity doesn't display with no event or task",
+                  "timedOut": null,
+                  "duration": 14572,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.noWidgetVisible('lastActivity');",
+                  "err": {},
+                  "uuid": "471115b1-e2b0-4f0f-b965-c516a82e5aa3",
+                  "parentUUID": "df2b5743-b152-43bb-aa2c-da5997426a8a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Next widget doesn't display with no event or task",
+                  "fullTitle": "company-companyOverview Widgets - no data Next widget doesn't display with no event or task",
+                  "timedOut": null,
+                  "duration": 60,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.noWidgetVisible('next');",
+                  "err": {},
+                  "uuid": "0c88cda6-5592-4b8c-abb7-8819052f8ab5",
+                  "parentUUID": "df2b5743-b152-43bb-aa2c-da5997426a8a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Company info widget without data",
+                  "fullTitle": "company-companyOverview Widgets - no data Company info widget without data",
+                  "timedOut": null,
+                  "duration": 26,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const companyData = {\n  address: 'Test123',\n  number: '',\n  fax: '',\n  website: ''\n};\nconst {\n  address,\n  number,\n  fax,\n  website\n} = companyData;\ncy.checkCompanyDetails('no data', address, number, fax, website);",
+                  "err": {},
+                  "uuid": "bc706c1f-055e-4712-9b70-df96cf267ffb",
+                  "parentUUID": "df2b5743-b152-43bb-aa2c-da5997426a8a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "No deals should show meaningful message",
+                  "fullTitle": "company-companyOverview Widgets - no data No deals should show meaningful message",
+                  "timedOut": null,
+                  "duration": 29,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('.overview-nodeals.empty-box .e-text').should('have.text', 'no deals').should('be.visible');\ncy.get('.overview-nodeals.empty-box .primary-btn[data-action=\"new-deal\"]').should('be.visible');",
+                  "err": {},
+                  "uuid": "202a03d2-a023-431c-a988-5f96c06b820f",
+                  "parentUUID": "df2b5743-b152-43bb-aa2c-da5997426a8a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "471115b1-e2b0-4f0f-b965-c516a82e5aa3",
+                "0c88cda6-5592-4b8c-abb7-8819052f8ab5",
+                "bc706c1f-055e-4712-9b70-df96cf267ffb",
+                "202a03d2-a023-431c-a988-5f96c06b820f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 14687,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "dfe5308f-619b-4865-90a8-95f41934070d",
+              "title": "Widgets - data",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Company info widget with data",
+                  "fullTitle": "company-companyOverview Widgets - data Company info widget with data",
+                  "timedOut": null,
+                  "duration": 6725,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const companyData = {\n  address: 'Test123',\n  number: '+448976645231',\n  fax: '0123456789',\n  website: 'www.google.com'\n};\nconst {\n  address,\n  number,\n  fax,\n  website\n} = companyData;\ncy.checkCompanyDetails('data', address, number, fax, website);",
+                  "err": {},
+                  "uuid": "e730e69f-015f-492f-ae32-265fa5320744",
+                  "parentUUID": "dfe5308f-619b-4865-90a8-95f41934070d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deals and lanes should display correctly on company overview",
+                  "fullTitle": "company-companyOverview Widgets - data Deals and lanes should display correctly on company overview",
+                  "timedOut": null,
+                  "duration": 5217,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const dealRevenueResponse1 = {\n  'Revenue': 356700.7726,\n  'Profit': 30044849.6439,\n  'SpotProfit': 0.0,\n  'SpotRevenue': 0.0,\n  'CurrencySymbol': '$'\n};\nconst dealRevenueResponse2 = {\n  'Revenue': 500.0,\n  'Profit': 20.0,\n  'SpotProfit': 0.0,\n  'SpotRevenue': 0.0,\n  'CurrencySymbol': '$'\n};\ncy.intercept(`/api/GlobalDeal/GetGlobalDeals`, {\n  fixture: 'companies/companyDeals.json'\n});\ncy.intercept(`/api/deal/GetDealRevenueFromUserCurrency?dealId=400&userId=${salesRepUserId}&dealSubscriberId=${subscriberId}&userSubscriberId=${subscriberId}`, dealRevenueResponse1);\ncy.intercept(`/api/deal/GetDealRevenueFromUserCurrency?dealId=600&userId=${salesRepUserId}&dealSubscriberId=${subscriberId}&userSubscriberId=${subscriberId}`, dealRevenueResponse2);\nconst dealOne = {\n  dealId: 400,\n  dealName: 'Clothing to US East',\n  dealStatus: 'Negotiation',\n  dealDecisionDate: '01-Mar-20',\n  dealRevenue: '$ 356,700',\n  dealProposalDate: '12-Apr-20',\n  dealProfit: '$ 30,044,849'\n};\nconst dealTwo = {\n  dealId2: 500,\n  dealName2: 'Deal to Spain',\n  dealStatus2: 'Final Negotiation',\n  dealDecisionDate2: '10-Aug-20',\n  dealRevenue2: '$ 0',\n  dealProposalDate2: '25-Dec-20',\n  dealProfit2: '$ 0'\n};\nconst dealThree = {\n  dealId3: 600,\n  dealName3: 'UK to USA East Coast Ocean FCL',\n  dealStatus3: 'Qualifying',\n  dealDecisionDate3: '29-Feb-20',\n  dealRevenue3: '$ 500',\n  dealProposalDate3: '14-Feb-20',\n  dealProfit3: '$ 20'\n};\nconst {\n  dealId,\n  dealName,\n  dealStatus,\n  dealDecisionDate,\n  dealRevenue,\n  dealProposalDate,\n  dealProfit\n} = dealOne;\nconst {\n  dealId2,\n  dealName2,\n  dealStatus2,\n  dealDecisionDate2,\n  dealRevenue2,\n  dealProposalDate2,\n  dealProfit2\n} = dealTwo;\nconst {\n  dealId3,\n  dealName3,\n  dealStatus3,\n  dealDecisionDate3,\n  dealRevenue3,\n  dealProposalDate3,\n  dealProfit3\n} = dealThree;\ncy.reload();\ncy.testIndividualDealOnCompany(dealId, dealName, dealStatus, dealDecisionDate, dealRevenue, dealProposalDate, dealProfit);\ncy.testIndividualDealOnCompany(dealId2, dealName2, dealStatus2, dealDecisionDate2, dealRevenue2, dealProposalDate2, dealProfit2);\ncy.testIndividualDealOnCompany(dealId3, dealName3, dealStatus3, dealDecisionDate3, dealRevenue3, dealProposalDate3, dealProfit3);",
+                  "err": {},
+                  "uuid": "ba23a840-8334-442e-bbec-aba3f84501c8",
+                  "parentUUID": "dfe5308f-619b-4865-90a8-95f41934070d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [
+                {
+                  "uuid": "3e8766b1-cab0-4678-bdbe-f81caa937770",
+                  "title": "next and last actitivty with event",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Company next widget with data - event",
+                      "fullTitle": "company-companyOverview Widgets - data next and last actitivty with event Company next widget with data - event",
+                      "timedOut": null,
+                      "duration": 60960,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const todaysDate = (0, _moment.default)();\nconst eventData = {\n  name: eventTitle,\n  date: `${todaysDate.add(5, 'days').format('ddd, DD-MMM-YY')} 15:00`,\n  time: '15:00 - 16:00 Pacific Time',\n  location: 'Manchester',\n  type: 'Meeting'\n};\nconst {\n  name,\n  date,\n  time,\n  location,\n  type\n} = eventData;\ncy.checkNextWidgetData('event', 'EVENT', name, date, time, location, type);",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "dd2dd4a3-a90a-4163-b8fc-1bf00345a75a",
+                      "parentUUID": "3e8766b1-cab0-4678-bdbe-f81caa937770",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Company last activity widget - event",
+                      "fullTitle": "company-companyOverview Widgets - data next and last actitivty with event Company last activity widget - event",
+                      "timedOut": null,
+                      "duration": 99,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const todaysDate = (0, _moment.default)();\nconst eventData = {\n  activity: 'EVENT',\n  eventName: eventTitle,\n  added: `${todaysDate.format('DD-MMM-YY')}`,\n  addedBy: `${salesRepName}`\n};\nconst {\n  activity,\n  eventName,\n  added,\n  addedBy\n} = eventData;\ncy.checkActivityWidget(activity, eventName, added, addedBy);",
+                      "err": {},
+                      "uuid": "d05736dc-3d1b-42b4-8639-5903cbe350bb",
+                      "parentUUID": "3e8766b1-cab0-4678-bdbe-f81caa937770",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "d05736dc-3d1b-42b4-8639-5903cbe350bb"
+                  ],
+                  "failures": [
+                    "dd2dd4a3-a90a-4163-b8fc-1bf00345a75a"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 61059,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "fc24aca6-1131-4739-9c8d-f539725c86b4",
+                  "title": "next and last actitivty with task",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Company next widget with data - task",
+                      "fullTitle": "company-companyOverview Widgets - data next and last actitivty with task Company next widget with data - task",
+                      "timedOut": null,
+                      "duration": 5742,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const todaysDate = (0, _moment.default)();\nconst taskData = {\n  name: newTaskName,\n  date: `${todaysDate.add(2, 'days').format('DD-MMM-YY')}`,\n  time: '',\n  location: '',\n  type: ''\n};\nconst {\n  name,\n  date,\n  time,\n  location,\n  type\n} = taskData;\ncy.checkNextWidgetData('task', 'TASK', name, date, time, location, type);",
+                      "err": {},
+                      "uuid": "eef4e9a5-370c-43db-a8e4-5e6ff115af3c",
+                      "parentUUID": "fc24aca6-1131-4739-9c8d-f539725c86b4",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Company last activity widget - task",
+                      "fullTitle": "company-companyOverview Widgets - data next and last actitivty with task Company last activity widget - task",
+                      "timedOut": null,
+                      "duration": 80,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const todaysDate = (0, _moment.default)();\nconst eventData = {\n  activity: 'TASK',\n  eventName: newTaskName,\n  added: `${todaysDate.format('DD-MMM-YY')}`,\n  addedBy: `${salesRepName}`\n};\nconst {\n  activity,\n  eventName,\n  added,\n  addedBy\n} = eventData;\ncy.checkActivityWidget(activity, eventName, added, addedBy);",
+                      "err": {},
+                      "uuid": "209c976d-322f-4ec2-9477-d10077e4034a",
+                      "parentUUID": "fc24aca6-1131-4739-9c8d-f539725c86b4",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "eef4e9a5-370c-43db-a8e4-5e6ff115af3c",
+                    "209c976d-322f-4ec2-9477-d10077e4034a"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 5822,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [
+                "e730e69f-015f-492f-ae32-265fa5320744",
+                "ba23a840-8334-442e-bbec-aba3f84501c8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 11942,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

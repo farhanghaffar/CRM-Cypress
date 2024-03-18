@@ -1,0 +1,372 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 10,
+    "passes": 6,
+    "pending": 0,
+    "failures": 4,
+    "start": "2024-03-07T02:29:58.669Z",
+    "end": "2024-03-07T02:35:02.822Z",
+    "duration": 304153,
+    "testsRegistered": 10,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "97857d4d-4853-41c7-ba02-44a0f0141423",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\campaigns\\campaigns.spec.js",
+      "file": "cypress\\e2e\\admin\\campaigns\\campaigns.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "73c94719-3b0f-41fd-90bf-366a9c8dda6b",
+          "title": "campaigns",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "1683bf21-a555-45fb-a279-ac49eb9d82ef",
+              "title": "campaigns validation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "name date field is required",
+                  "fullTitle": "campaigns campaigns validation name date field is required",
+                  "timedOut": null,
+                  "duration": 4314,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.saveForm();\ncy.campaignFormValidationChecker();",
+                  "err": {},
+                  "uuid": "dc70b8e9-5e65-4f5e-82bb-8408ccf9008d",
+                  "parentUUID": "1683bf21-a555-45fb-a279-ac49eb9d82ef",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "close company locations form",
+                  "fullTitle": "campaigns campaigns validation close company locations form",
+                  "timedOut": null,
+                  "duration": 1337,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.cancelForm();\ncy.get('#tblCampaigns').should('be.visible');",
+                  "err": {},
+                  "uuid": "b8a5e5a6-2528-40bc-ac45-d1460283526d",
+                  "parentUUID": "1683bf21-a555-45fb-a279-ac49eb9d82ef",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "dc70b8e9-5e65-4f5e-82bb-8408ccf9008d",
+                "b8a5e5a6-2528-40bc-ac45-d1460283526d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5651,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c5aa6d76-0056-4fd4-98fc-309abc8a95f4",
+              "title": "company locations functionality",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Add campaign and see on overview",
+                  "fullTitle": "campaigns company locations functionality Add campaign and see on overview",
+                  "timedOut": null,
+                  "duration": 61098,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept('/api/campaign/SaveCampaign').as('saveCampaign');\nconst campaignsData = {\n  campaignName: `CAMPAIGN_${(0, _helpers.stringGen)(8)}`,\n  // campaignNumber: stringGen(3),\n  campaignTypeSearch: 'Global',\n  campaignType: 'Global',\n  // campaignStartDate: moment().format('YYYY-MM-DD'),\n  // campaignEndDate: moment().add(1, 'days').format('YYYY-MM-DD'),\n  campaignOwnerSearch: crmAdminUserName,\n  campaignOwner: crmAdminUserName,\n  campaignComments: `CAMPAIGN COMMENT ${(0, _helpers.stringGen)(20)}`\n};\ncy.openCampaginsForm();\ncy.fillForm(_forms.campaignsForm, campaignsData);\ncy.saveForm();\ncy.wait('@saveCampaign').then(xhr => {\n  const campaignId = xhr.response.body;\n  cy.checkCampaignOverview(campaignId, 'Active', campaignsData);\n  cy.deleteCampaignAPI(campaignId, userData.userId, subscriberId);\n});",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                    "diff": null
+                  },
+                  "uuid": "112a006b-cec5-43e5-84f3-90f5abd08f52",
+                  "parentUUID": "c5aa6d76-0056-4fd4-98fc-309abc8a95f4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Selecting campaign displays all data on edit form",
+                  "fullTitle": "campaigns company locations functionality Selecting campaign displays all data on edit form",
+                  "timedOut": null,
+                  "duration": 61475,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const campaignData = {\n  campaignName: `CAMPAIGN_${(0, _helpers.stringGen)(7)}`,\n  campaignNumber: (0, _helpers.numGen)(6),\n  campaignTypeSearch: 'Local',\n  campaignType: 'Local',\n  campaignStatus: 'Inactive',\n  campaignComments: 'TEST',\n  campaignOwner: crmAdminUserName,\n  campaignStartDate: (0, _moment.default)().format('YYYY-MM-DD'),\n  campaignEndDate: (0, _moment.default)().add(5, 'days').format('YYYY-MM-DD')\n};\ncy.addCampaignAPI(userData, campaignData).then(response => {\n  const campaignId = response.body;\n  cy.navigateAndCheckURL(_urls.CAMPAIGN_LIST_URL);\n  cy.viewAndSelectEditCampaign(campaignId, campaignData.campaignName);\n  cy.campaignFormData(campaignData);\n  cy.deleteCampaignAPI(campaignId, userData.userId, subscriberId);\n});",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                    "diff": null
+                  },
+                  "uuid": "b93b4ee5-ef36-4887-9a61-a0e924944bb7",
+                  "parentUUID": "c5aa6d76-0056-4fd4-98fc-309abc8a95f4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Edit campaign",
+                  "fullTitle": "campaigns company locations functionality Edit campaign",
+                  "timedOut": null,
+                  "duration": 63517,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const campaignData = {\n  campaignName: `CAMPAIGN_${(0, _helpers.stringGen)(7)}`,\n  campaignNumber: (0, _helpers.numGen)(6),\n  campaignStartDate: (0, _moment.default)().format('YYYY-MM-DD'),\n  campaignEndDate: (0, _moment.default)().add(5, 'days').format('YYYY-MM-DD')\n};\ncy.addCampaignAPI(userData, campaignData).then(response => {\n  const campaignId = response.body;\n  const editCampaign = {\n    campaignName: `EDIT_${(0, _helpers.stringGen)(4)}`,\n    campaignNumber: (0, _helpers.stringGen)(3),\n    campaignTypeSearch: 'Local',\n    campaignType: 'Local',\n    campaignStartDate: (0, _moment.default)().add(5, 'days').format('YYYY-MM-DD'),\n    campaignEndDate: (0, _moment.default)().add(10, 'days').format('YYYY-MM-DD'),\n    campaignOwnerSearch: crmAdminUserName,\n    campaignOwner: crmAdminUserName,\n    campaignComments: `CAMPAIGN COMMENT ${(0, _helpers.stringGen)(20)}`\n  };\n  cy.navigateAndCheckURL(_urls.CAMPAIGN_LIST_URL);\n  cy.viewAndSelectEditCampaign(campaignId, campaignData.campaignName);\n  cy.fillForm(_forms.campaignsForm, editCampaign);\n  cy.saveForm();\n  cy.checkCampaignOverview(campaignId, 'Active', editCampaign);\n  cy.deleteCampaignAPI(campaignId, userData.userId, subscriberId);\n});",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                    "diff": null
+                  },
+                  "uuid": "bc0a6db3-afee-45cf-b8a0-cba944a1d8cb",
+                  "parentUUID": "c5aa6d76-0056-4fd4-98fc-309abc8a95f4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Delete campaign",
+                  "fullTitle": "campaigns company locations functionality Delete campaign",
+                  "timedOut": null,
+                  "duration": 88772,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const campaignData = {\n  campaignName: `CAMPAIGN_${(0, _helpers.stringGen)(7)}`,\n  campaignNumber: (0, _helpers.numGen)(6),\n  campaignStartDate: (0, _moment.default)().format('YYYY-MM-DD'),\n  campaignEndDate: (0, _moment.default)().add(5, 'days').format('YYYY-MM-DD')\n};\ncy.addCampaignAPI(userData, campaignData).then(response => {\n  const campaignId = response.body;\n  cy.intercept(`/api/campaign/deletecampaign/?campaignId=${campaignId}&userId=${userData.userId}&subscriberId=${subscriberId}`).as('deleteCampaign');\n  cy.navigateAndCheckURL(_urls.CAMPAIGN_LIST_URL);\n  cy.viewAndSelectEditCampaign(campaignId, campaignData.campaignName);\n  cy.deleteForm();\n  cy.deleteModal('Delete Campaign!', 'Are you sure you want to delete this campaign?', 'delete');\n  cy.wait('@deleteCampaign');\n  cy.campaignNotOnOverview(campaignId, campaignData.campaignName);\n});",
+                  "err": {
+                    "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                    "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                    "diff": null
+                  },
+                  "uuid": "82305dd7-094f-45ba-a2f8-699132953916",
+                  "parentUUID": "c5aa6d76-0056-4fd4-98fc-309abc8a95f4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [
+                {
+                  "uuid": "d78adef4-a5b2-4736-9c19-dd35f405a1e7",
+                  "title": "active campaign check",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "active campaign displays on campaign dropdown on company form",
+                      "fullTitle": "campaigns company locations functionality active campaign check active campaign displays on campaign dropdown on company form",
+                      "timedOut": null,
+                      "duration": 6599,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.navigateAndCheckURL(_urls.COMPANY_ADD_URL);\ncy.companyAlreadyExists((0, _helpers.stringGen)(20));\ncy.wait(2000);\nselectCompanyCampaignsDropdown();\ncampaignIncludedInDropdown(campaignData.campaignName);",
+                      "err": {},
+                      "uuid": "a1bdaa75-8c95-40ee-80de-ca70cb505182",
+                      "parentUUID": "d78adef4-a5b2-4736-9c19-dd35f405a1e7",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "active campaign displays on campaign dropdown on deal form",
+                      "fullTitle": "campaigns company locations functionality active campaign check active campaign displays on campaign dropdown on deal form",
+                      "timedOut": null,
+                      "duration": 5195,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.navigateAndCheckURL(_urls.DEAL_LIST_URL);\ncy.openDealForm();\nselectDealCampaignsDropdown();\ncampaignIncludedInDropdown(campaignData.campaignName);",
+                      "err": {},
+                      "uuid": "9f07f356-ea1f-4fb9-ad88-6fea89ae8e0c",
+                      "parentUUID": "d78adef4-a5b2-4736-9c19-dd35f405a1e7",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "a1bdaa75-8c95-40ee-80de-ca70cb505182",
+                    "9f07f356-ea1f-4fb9-ad88-6fea89ae8e0c"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 11794,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "756688dd-9615-4d64-808c-b97e686a6478",
+                  "title": "inactive campaign check",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "inactive campaign does not display on campaign dropdown on company form",
+                      "fullTitle": "campaigns company locations functionality inactive campaign check inactive campaign does not display on campaign dropdown on company form",
+                      "timedOut": null,
+                      "duration": 5950,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.navigateAndCheckURL(_urls.COMPANY_ADD_URL);\ncy.companyAlreadyExists((0, _helpers.stringGen)(20));\ncy.wait(2000);\nselectCompanyCampaignsDropdown();\ncampaignNotIncludedInDropdown(campaignData.campaignName);",
+                      "err": {},
+                      "uuid": "afe6d3be-524a-4cd8-9e44-e3d706b81c4c",
+                      "parentUUID": "756688dd-9615-4d64-808c-b97e686a6478",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "inactive campaign does not display on campaign dropdown on deal form",
+                      "fullTitle": "campaigns company locations functionality inactive campaign check inactive campaign does not display on campaign dropdown on deal form",
+                      "timedOut": null,
+                      "duration": 5104,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.navigateAndCheckURL(_urls.DEAL_LIST_URL);\ncy.openDealForm();\nselectDealCampaignsDropdown();\ncampaignNotIncludedInDropdown(campaignData.campaignName);",
+                      "err": {},
+                      "uuid": "7fbcea52-323f-4b8d-96b8-c90f278445fd",
+                      "parentUUID": "756688dd-9615-4d64-808c-b97e686a6478",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "afe6d3be-524a-4cd8-9e44-e3d706b81c4c",
+                    "7fbcea52-323f-4b8d-96b8-c90f278445fd"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 11054,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [
+                "112a006b-cec5-43e5-84f3-90f5abd08f52",
+                "b93b4ee5-ef36-4887-9a61-a0e924944bb7",
+                "bc0a6db3-afee-45cf-b8a0-cba944a1d8cb",
+                "82305dd7-094f-45ba-a2f8-699132953916"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 274862,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

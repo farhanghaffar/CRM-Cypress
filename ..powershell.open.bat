@@ -1,0 +1,1 @@
+PowerShell -NoExit -Command node_modules/.bin/cypress open

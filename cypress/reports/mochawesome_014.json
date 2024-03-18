@@ -1,0 +1,432 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 10,
+    "passes": 9,
+    "pending": 2,
+    "failures": -1,
+    "start": "2024-03-07T02:17:13.907Z",
+    "end": "2024-03-07T02:17:48.830Z",
+    "duration": 34923,
+    "testsRegistered": 11,
+    "passPercent": 100,
+    "pendingPercent": 18.181818181818183,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ede4e210-acaf-408a-9ebb-aad7f6fa52ee",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login\\login.spec.js",
+      "file": "cypress\\e2e\\login\\login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb0de612-1520-4361-98c0-9b9a1f1688e1",
+          "title": "login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "22d25a51-f1ed-4449-80f4-7d4e719cca48",
+              "title": "login form",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "5f951aea-a23e-4b00-bc0b-fb3fb972c63a",
+                  "title": "validation",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "no email data validation message",
+                      "fullTitle": "login login form validation no email data validation message",
+                      "timedOut": null,
+                      "duration": 1966,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.loginValidation('noEmail');",
+                      "err": {},
+                      "uuid": "ed30b112-c023-495c-8017-95c94c4eea93",
+                      "parentUUID": "5f951aea-a23e-4b00-bc0b-fb3fb972c63a",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "invalid email validation message",
+                      "fullTitle": "login login form validation invalid email validation message",
+                      "timedOut": null,
+                      "duration": 381,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.loginValidation('invalidEmail');",
+                      "err": {},
+                      "uuid": "9d377b49-e450-404c-9d6f-81f1e93bef97",
+                      "parentUUID": "5f951aea-a23e-4b00-bc0b-fb3fb972c63a",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "no password data validation message",
+                      "fullTitle": "login login form validation no password data validation message",
+                      "timedOut": null,
+                      "duration": 421,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.loginValidation('noPassword');",
+                      "err": {},
+                      "uuid": "fed288a7-5cc1-484c-bec1-6e02ccd6be5f",
+                      "parentUUID": "5f951aea-a23e-4b00-bc0b-fb3fb972c63a",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "invalid login details",
+                      "fullTitle": "login login form validation invalid login details",
+                      "timedOut": null,
+                      "duration": 3587,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.loginValidation('incorrectDetails');",
+                      "err": {},
+                      "uuid": "7fcd6a25-c368-4d9b-9db1-2f30ac88f3b7",
+                      "parentUUID": "5f951aea-a23e-4b00-bc0b-fb3fb972c63a",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "ed30b112-c023-495c-8017-95c94c4eea93",
+                    "9d377b49-e450-404c-9d6f-81f1e93bef97",
+                    "fed288a7-5cc1-484c-bec1-6e02ccd6be5f",
+                    "7fcd6a25-c368-4d9b-9db1-2f30ac88f3b7"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 6355,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "a269b1ce-0b7b-4998-ac85-9cb1128950ef",
+                  "title": "navigation",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "navigate to terms and conditions page",
+                      "fullTitle": "login login form navigation navigate to terms and conditions page",
+                      "timedOut": null,
+                      "duration": 828,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.get(footerSelector('Privacy.aspx')).should('have.text', 'Privacy Policy').click();\ncy.url().should('have.string', 'Privacy.aspx');\ncy.get('h1.page-title').should('have.text', 'Privacy Statement');",
+                      "err": {},
+                      "uuid": "1bd670ea-0988-40f0-ac48-c4dab6add09e",
+                      "parentUUID": "a269b1ce-0b7b-4998-ac85-9cb1128950ef",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "navigate to privacy policy page",
+                      "fullTitle": "login login form navigation navigate to privacy policy page",
+                      "timedOut": null,
+                      "duration": 839,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.get(footerSelector('Terms.aspx')).should('have.text', 'Terms & Conditions').click();\ncy.url().should('have.string', 'Terms.aspx');\ncy.get('h1.page-title').should('have.text', 'Terms and Conditions');",
+                      "err": {},
+                      "uuid": "bdf605ef-7ac3-481d-9259-b99fcbeb45b0",
+                      "parentUUID": "a269b1ce-0b7b-4998-ac85-9cb1128950ef",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "1bd670ea-0988-40f0-ac48-c4dab6add09e",
+                    "bdf605ef-7ac3-481d-9259-b99fcbeb45b0"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 1667,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "adb38e40-f3e4-463e-98d2-6a8d20fcca09",
+              "title": "functionality",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "596f64ba-1623-4427-bb57-2efba1facd69",
+                  "title": "login",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "user must be able to successfully login",
+                      "fullTitle": "login functionality login user must be able to successfully login",
+                      "timedOut": null,
+                      "duration": 7880,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const user = 'salesManager';\ncy.login(user);\ncy.get('#navSidebar_lblUserName').should('have.text', users[user].details.name);",
+                      "err": {},
+                      "uuid": "4d7ce1c6-8fa9-4d9e-b10d-c8ed4fdac48c",
+                      "parentUUID": "596f64ba-1623-4427-bb57-2efba1facd69",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "newly created user can login successfully",
+                      "fullTitle": "login functionality login newly created user can login successfully",
+                      "timedOut": null,
+                      "duration": 7057,
+                      "state": "passed",
+                      "speed": "medium",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.get('#txtUsername').type(userData.email);\ncy.wait(500);\ncy.get('#txtPassword').type('password');\ncy.wait(500);\ncy.get('#btnLogin').click();\ncy.get('#navSidebar_lblUserName').should('have.text', `${userData.firstName} ${userData.lastName}`);",
+                      "err": {},
+                      "uuid": "43c58876-e843-426f-a6b5-7e5c348931e5",
+                      "parentUUID": "596f64ba-1623-4427-bb57-2efba1facd69",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "4d7ce1c6-8fa9-4d9e-b10d-c8ed4fdac48c",
+                    "43c58876-e843-426f-a6b5-7e5c348931e5"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 14937,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "9fe8988e-f1e7-4df8-9ec7-eee7adb9f5d0",
+                  "title": "logout",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "user should be able to logout",
+                      "fullTitle": "login functionality logout user should be able to logout",
+                      "timedOut": null,
+                      "duration": 10848,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.get('#navSidebar_imgUserProfilePic').click();\ncy.wait(2000);\ncy.get('#lblUserFullName').should('have.text', users[user].details.name);\ncy.get('.btn-log-out').should('have.text', 'Log Out').click();\ncy.get('#txtUsername').should('be.visible');\ncy.get('#txtPassword').should('be.visible');\ncy.get('#btnLogin').should('be.visible');",
+                      "err": {},
+                      "uuid": "c1cdd4b4-8a25-4f25-8309-90d39079e8c3",
+                      "parentUUID": "9fe8988e-f1e7-4df8-9ec7-eee7adb9f5d0",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "c1cdd4b4-8a25-4f25-8309-90d39079e8c3"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 10848,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "751e0074-bfda-486b-8e1f-20413c43bab2",
+                  "title": "forgot password",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "user must be able to change password",
+                      "fullTitle": "login functionality forgot password user must be able to change password",
+                      "timedOut": null,
+                      "duration": 0,
+                      "state": "pending",
+                      "speed": null,
+                      "pass": false,
+                      "fail": false,
+                      "pending": true,
+                      "context": null,
+                      "code": "",
+                      "err": {},
+                      "uuid": "fcf3dd4e-fa33-4a54-8be4-f08e27066fb4",
+                      "parentUUID": "751e0074-bfda-486b-8e1f-20413c43bab2",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "user must be able to login after password change",
+                      "fullTitle": "login functionality forgot password user must be able to login after password change",
+                      "timedOut": null,
+                      "duration": 0,
+                      "state": "pending",
+                      "speed": null,
+                      "pass": false,
+                      "fail": false,
+                      "pending": true,
+                      "context": null,
+                      "code": "",
+                      "err": {},
+                      "uuid": "bb74d4be-c51a-4eb8-a3d3-25c1753e63d8",
+                      "parentUUID": "751e0074-bfda-486b-8e1f-20413c43bab2",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [],
+                  "failures": [],
+                  "pending": [
+                    "fcf3dd4e-fa33-4a54-8be4-f08e27066fb4",
+                    "bb74d4be-c51a-4eb8-a3d3-25c1753e63d8"
+                  ],
+                  "skipped": [],
+                  "duration": 0,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T02:45:36.753Z",
+    "end": "2024-03-07T02:46:54.502Z",
+    "duration": 77749,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d562e2b8-439e-4bcd-8f39-67eb7e6d0275",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\settings\\settings.deal-types.spec.js",
+      "file": "cypress\\e2e\\admin\\settings\\settings.deal-types.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9e191840-ac72-49e2-9bf3-9f3a96aad649",
+          "title": "settings.deal-types",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list deal types",
+              "fullTitle": "settings.deal-types should list deal types",
+              "timedOut": null,
+              "duration": 4399,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.get(dealTypeHeader).click();\ncy.get(dealTypeContainer).find('tr').should('have.length.gte', 4);",
+              "err": {},
+              "uuid": "75998f11-bfcc-469a-9266-9eb4509c4ab9",
+              "parentUUID": "9e191840-ac72-49e2-9bf3-9f3a96aad649",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add and remove deal types",
+              "fullTitle": "settings.deal-types should add and remove deal types",
+              "timedOut": null,
+              "duration": 27546,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const uniqueString = (0, _helpers.stringGen)(5);\nconst dealTypeName = `TestDeal Type_${uniqueString}`;\nconst addedDealType = getNewDealType(dealTypeName);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.addAndRemoveSettings(dealTypeHeader, newDealType, addDealType, addedDealType, dealTypeName, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "ba6c9806-8e81-4f09-a467-dca4694ac422",
+              "parentUUID": "9e191840-ac72-49e2-9bf3-9f3a96aad649",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should edit deal types",
+              "fullTitle": "settings.deal-types should edit deal types",
+              "timedOut": null,
+              "duration": 44972,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const initialRandomString = (0, _helpers.stringGen)(9);\nconst editRandomString = (0, _helpers.stringGen)(8);\nconst initialRandomStringSelector = getNewDealType(initialRandomString);\nconst editRandomStringSelector = getNewDealType(editRandomString);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.editAndRemoveSettings(dealTypeHeader, newDealType, addDealType, initialRandomString, editRandomString, initialRandomStringSelector, editRandomStringSelector, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "996bf61b-dbc8-49b2-ac34-90775a74efd2",
+              "parentUUID": "9e191840-ac72-49e2-9bf3-9f3a96aad649",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "75998f11-bfcc-469a-9266-9eb4509c4ab9",
+            "ba6c9806-8e81-4f09-a467-dca4694ac422",
+            "996bf61b-dbc8-49b2-ac34-90775a74efd2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 76917,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

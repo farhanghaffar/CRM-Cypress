@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 2,
+    "failures": -2,
+    "start": "2024-03-07T02:36:01.984Z",
+    "end": "2024-03-07T02:36:26.818Z",
+    "duration": 24834,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 40,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "cbbe320c-f056-4cbf-8896-a6840650387d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\locations\\locations.countriesToRegions.spec.js",
+      "file": "cypress\\e2e\\admin\\locations\\locations.countriesToRegions.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f820cc05-eb5e-4fc5-ace1-3cf5675b92be",
+          "title": "locations.countriesToRegions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f827d7c4-dfb1-4dc9-b13b-7c93c0e665f7",
+              "title": "countries to regions functionality",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Add one country to Region and save",
+                  "fullTitle": "locations.countriesToRegions countries to regions functionality Add one country to Region and save",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "2263fb99-5837-4d25-85da-b8db6535aa71",
+                  "parentUUID": "f827d7c4-dfb1-4dc9-b13b-7c93c0e665f7",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Add multiple countries to Region",
+                  "fullTitle": "locations.countriesToRegions countries to regions functionality Add multiple countries to Region",
+                  "timedOut": null,
+                  "duration": 7633,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept('/api/CountryRegions/UpdateCountries').as('updateCountries');\ncy.toggleCountriesToRegions('addAll');\ncy.saveForm();\ncy.wait('@updateCountries');\ncy.reload();\ncy.selectLocationTab('countriesToRegions');\ncy.toggleRegionCountriesToRegions(regionName);\ncy.testRegionCountriesOptions(availableCountriesArray);",
+                  "err": {},
+                  "uuid": "cc3d1439-69d2-43aa-b551-89591c96a2cf",
+                  "parentUUID": "f827d7c4-dfb1-4dc9-b13b-7c93c0e665f7",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Remove one country from Region",
+                  "fullTitle": "locations.countriesToRegions countries to regions functionality Remove one country from Region",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "e0a8a698-6234-467f-9d19-9a7171f5bf00",
+                  "parentUUID": "f827d7c4-dfb1-4dc9-b13b-7c93c0e665f7",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Remove multiple countries from Region",
+                  "fullTitle": "locations.countriesToRegions countries to regions functionality Remove multiple countries from Region",
+                  "timedOut": null,
+                  "duration": 6003,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept('/api/CountryRegions/UpdateCountries').as('updateCountries');\ncy.toggleCountriesToRegions('removeAll');\ncy.saveForm();\ncy.wait('@updateCountries');\ncy.reload();\ncy.selectLocationTab('countriesToRegions');\ncy.toggleRegionCountriesToRegions(regionName);\ncy.testCountriesWithNoRegionsOptions(availableCountriesArray);",
+                  "err": {},
+                  "uuid": "c871fac7-cbf0-468c-9e19-c5da6930c981",
+                  "parentUUID": "f827d7c4-dfb1-4dc9-b13b-7c93c0e665f7",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Able to search for region inside regions toggle",
+                  "fullTitle": "locations.countriesToRegions countries to regions functionality Able to search for region inside regions toggle",
+                  "timedOut": null,
+                  "duration": 467,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#select2-CountriesToRegions_ddlRegions-container').click();\ncy.get('.select2-search__field').type(regionName);\ncy.get('#select2-CountriesToRegions_ddlRegions-results > li').should('have.length', 1).and('contain.text', regionName);",
+                  "err": {},
+                  "uuid": "0cf37ebb-0d80-48da-8314-4fb3ba31ae3e",
+                  "parentUUID": "f827d7c4-dfb1-4dc9-b13b-7c93c0e665f7",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "cc3d1439-69d2-43aa-b551-89591c96a2cf",
+                "c871fac7-cbf0-468c-9e19-c5da6930c981",
+                "0cf37ebb-0d80-48da-8314-4fb3ba31ae3e"
+              ],
+              "failures": [],
+              "pending": [
+                "2263fb99-5837-4d25-85da-b8db6535aa71",
+                "e0a8a698-6234-467f-9d19-9a7171f5bf00"
+              ],
+              "skipped": [],
+              "duration": 14103,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

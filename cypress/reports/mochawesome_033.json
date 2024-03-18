@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T02:48:26.715Z",
+    "end": "2024-03-07T02:49:42.598Z",
+    "duration": 75883,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ef78fcab-5f73-4b9b-bf2e-ff6a0446ed7a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\settings\\settings.lost-reasons.spec.js",
+      "file": "cypress\\e2e\\admin\\settings\\settings.lost-reasons.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "161cfb2e-4a7e-476a-ace8-6fd5ac8f85d8",
+          "title": "settings.lost-reasons",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list lost reasons",
+              "fullTitle": "settings.lost-reasons should list lost reasons",
+              "timedOut": null,
+              "duration": 4204,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.get(lostReasonHeader).click();\ncy.get(lostReasonContainer).find('tr').should('have.length.gte', 1);",
+              "err": {},
+              "uuid": "9a4b65b3-df85-49eb-9d5c-f8a7a76b1d56",
+              "parentUUID": "161cfb2e-4a7e-476a-ace8-6fd5ac8f85d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add and remove lost reasons",
+              "fullTitle": "settings.lost-reasons should add and remove lost reasons",
+              "timedOut": null,
+              "duration": 26691,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const uniqueString = (0, _helpers.stringGen)(5);\nconst lostReasonName = `Test Lost Reason_${uniqueString}`;\nconst addedLostReason = getNewLostReason(lostReasonName);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.addAndRemoveSettings(lostReasonHeader, newLostReason, addLostReason, addedLostReason, lostReasonName, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "472beb1e-5bc3-4ab1-8997-96082ded809f",
+              "parentUUID": "161cfb2e-4a7e-476a-ace8-6fd5ac8f85d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should edit lost reasons",
+              "fullTitle": "settings.lost-reasons should edit lost reasons",
+              "timedOut": null,
+              "duration": 44127,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const initialRandomString = (0, _helpers.stringGen)(9);\nconst editRandomString = (0, _helpers.stringGen)(8);\nconst initialRandomStringSelector = getNewLostReason(initialRandomString);\nconst editRandomStringSelector = getNewLostReason(editRandomString);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.editAndRemoveSettings(lostReasonHeader, newLostReason, addLostReason, initialRandomString, editRandomString, initialRandomStringSelector, editRandomStringSelector, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "99986e3c-b144-4178-a229-a5e508dae4be",
+              "parentUUID": "161cfb2e-4a7e-476a-ace8-6fd5ac8f85d8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9a4b65b3-df85-49eb-9d5c-f8a7a76b1d56",
+            "472beb1e-5bc3-4ab1-8997-96082ded809f",
+            "99986e3c-b144-4178-a229-a5e508dae4be"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 75022,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

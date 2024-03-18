@@ -1,0 +1,560 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 16,
+    "passes": 8,
+    "pending": 0,
+    "failures": 8,
+    "start": "2024-03-07T00:31:30.619Z",
+    "end": "2024-03-07T00:40:59.690Z",
+    "duration": 569071,
+    "testsRegistered": 16,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "330ddb95-54d4-470e-b10d-1777c40696f8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\lanes\\airLane.spec.js",
+      "file": "cypress\\e2e\\lanes\\airLane.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a3240ef2-98a5-46a1-88e8-fe3ccb991fed",
+          "title": "Air Lane",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "381fb83a-b44a-41b3-a645-40fb646d3101",
+              "title": "Air Lane form testing",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "6349f1c3-95e2-4401-b0ab-86a1312aa33b",
+                  "title": "validation testing",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Company is pre-enetered into origin shipper field",
+                      "fullTitle": "Air Lane Air Lane form testing validation testing Company is pre-enetered into origin shipper field",
+                      "timedOut": null,
+                      "duration": 17884,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.prePopulatedShipper(newCompanyName);",
+                      "err": {},
+                      "uuid": "040e4d57-5e54-43bb-901c-cc41f8a24ac0",
+                      "parentUUID": "6349f1c3-95e2-4401-b0ab-86a1312aa33b",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Valume, Revenue and Profit fields show correct validation messages for required",
+                      "fullTitle": "Air Lane Air Lane form testing validation testing Valume, Revenue and Profit fields show correct validation messages for required",
+                      "timedOut": null,
+                      "duration": 753,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.laneValidationChecker('air');",
+                      "err": {},
+                      "uuid": "f645fbf7-01c0-4fa3-83bd-4a40014e489f",
+                      "parentUUID": "6349f1c3-95e2-4401-b0ab-86a1312aa33b",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "changing currency dropdown to European Euros changes the prefix for Revenue, Profit and Text Currency",
+                      "fullTitle": "Air Lane Air Lane form testing validation testing changing currency dropdown to European Euros changes the prefix for Revenue, Profit and Text Currency",
+                      "timedOut": null,
+                      "duration": 544,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newFormInputs = {\n  laneProfitType: 'Flat Rate',\n  laneCurrency: 'European Euros'\n};\ncy.toggleCurrencyAndUpdatePrefixes(_forms.laneForm, newFormInputs);",
+                      "err": {},
+                      "uuid": "4d2bf8c1-799c-4904-8e81-cfc03979d2c2",
+                      "parentUUID": "6349f1c3-95e2-4401-b0ab-86a1312aa33b",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Profit must not be more than revenue",
+                      "fullTitle": "Air Lane Air Lane form testing validation testing Profit must not be more than revenue",
+                      "timedOut": null,
+                      "duration": 1454,
+                      "state": "passed",
+                      "speed": "fast",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newFormInputs = {\n  laneVolume: '2000',\n  laneRevenue: '500',\n  laneProfit: '20',\n  laneProfitType: 'Per KG'\n};\ncy.fillForm(_forms.laneForm, newFormInputs);\ncy.profitValidationChecker();",
+                      "err": {},
+                      "uuid": "038e23d1-ca79-4905-9fe7-832e6370023e",
+                      "parentUUID": "6349f1c3-95e2-4401-b0ab-86a1312aa33b",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "040e4d57-5e54-43bb-901c-cc41f8a24ac0",
+                    "f645fbf7-01c0-4fa3-83bd-4a40014e489f",
+                    "4d2bf8c1-799c-4904-8e81-cfc03979d2c2",
+                    "038e23d1-ca79-4905-9fe7-832e6370023e"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 20635,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "dee2622e-5f7e-41fc-9efe-15b5e47276d7",
+                  "title": "Profit updates with different inputs",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Profit Update - Volume: Tonnes - Profit: Percentage",
+                      "fullTitle": "Air Lane Air Lane form testing Profit updates with different inputs Profit Update - Volume: Tonnes - Profit: Percentage",
+                      "timedOut": null,
+                      "duration": 58117,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newDropdownValue = {\n  laneVolumeUnit: 'Tonnes',\n  laneProfitType: 'Percentage'\n};\ncy.profitUpdateChecker(_forms.laneForm, newDropdownValue, '250');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "d0e4f2a8-241f-425a-b368-39e84e9c7389",
+                      "parentUUID": "dee2622e-5f7e-41fc-9efe-15b5e47276d7",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Profit Update - Volume: Tonnes - Profit: Flat Rate",
+                      "fullTitle": "Air Lane Air Lane form testing Profit updates with different inputs Profit Update - Volume: Tonnes - Profit: Flat Rate",
+                      "timedOut": null,
+                      "duration": 55178,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newDropdownValue = {\n  laneVolumeUnit: 'Tonnes',\n  laneProfitType: 'Flat Rate'\n};\ncy.profitUpdateChecker(_forms.laneForm, newDropdownValue, '50');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "e0929b26-4399-4d81-90e4-09b72a475fb9",
+                      "parentUUID": "dee2622e-5f7e-41fc-9efe-15b5e47276d7",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Profit Update - Volume: Tonnes - Profit: Per KG",
+                      "fullTitle": "Air Lane Air Lane form testing Profit updates with different inputs Profit Update - Volume: Tonnes - Profit: Per KG",
+                      "timedOut": null,
+                      "duration": 55221,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newDropdownValue = {\n  laneVolumeUnit: 'Tonnes',\n  laneProfitType: 'Per KG'\n};\ncy.profitUpdateChecker(_forms.laneForm, newDropdownValue, '100,000');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "6fbc6c5f-a33b-4456-a64c-2cc6dd63819e",
+                      "parentUUID": "dee2622e-5f7e-41fc-9efe-15b5e47276d7",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Profit Update - Volume: KGs - Profit: Percentage",
+                      "fullTitle": "Air Lane Air Lane form testing Profit updates with different inputs Profit Update - Volume: KGs - Profit: Percentage",
+                      "timedOut": null,
+                      "duration": 55214,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newDropdownValue = {\n  laneVolumeUnit: 'KGs',\n  laneProfitType: 'Percentage'\n};\ncy.profitUpdateChecker(_forms.laneForm, newDropdownValue, '250');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "16f89228-dc2f-4ca8-ae1f-94a47070777d",
+                      "parentUUID": "dee2622e-5f7e-41fc-9efe-15b5e47276d7",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Profit Update - Volume: KGs - Profit: Flat Rate",
+                      "fullTitle": "Air Lane Air Lane form testing Profit updates with different inputs Profit Update - Volume: KGs - Profit: Flat Rate",
+                      "timedOut": null,
+                      "duration": 55186,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newDropdownValue = {\n  laneVolumeUnit: 'KGs',\n  laneProfitType: 'Flat Rate'\n};\ncy.profitUpdateChecker(_forms.laneForm, newDropdownValue, '50');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "1dd32ba9-334d-4fa3-bca0-d75cbac0fe2c",
+                      "parentUUID": "dee2622e-5f7e-41fc-9efe-15b5e47276d7",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Profit Update - Volume: KGs - Profit: Per KG",
+                      "fullTitle": "Air Lane Air Lane form testing Profit updates with different inputs Profit Update - Volume: KGs - Profit: Per KG",
+                      "timedOut": null,
+                      "duration": 55244,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newDropdownValue = {\n  laneVolumeUnit: 'KGs',\n  laneProfitType: 'Per KG'\n};\ncy.profitUpdateChecker(_forms.laneForm, newDropdownValue, '100');",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "c18c6356-2639-4ae0-a60e-f975de3ed680",
+                      "parentUUID": "dee2622e-5f7e-41fc-9efe-15b5e47276d7",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [],
+                  "failures": [
+                    "d0e4f2a8-241f-425a-b368-39e84e9c7389",
+                    "e0929b26-4399-4d81-90e4-09b72a475fb9",
+                    "6fbc6c5f-a33b-4456-a64c-2cc6dd63819e",
+                    "16f89228-dc2f-4ca8-ae1f-94a47070777d",
+                    "1dd32ba9-334d-4fa3-bca0-d75cbac0fe2c",
+                    "c18c6356-2639-4ae0-a60e-f975de3ed680"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 334160,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "4c468978-9bad-4562-834a-fd61352787bb",
+              "title": "Air Lane functionality",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [],
+              "suites": [
+                {
+                  "uuid": "69cf9e8c-d1e9-4606-ad05-799a9d4e20f6",
+                  "title": "Adding Air Lanes",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Add Air Lane - No Origin/Destination",
+                      "fullTitle": "Air Lane Air Lane functionality Adding Air Lanes Add Air Lane - No Origin/Destination",
+                      "timedOut": null,
+                      "duration": 14338,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newLaneForm = {\n  laneVolume: '100',\n  laneRevenue: '5000',\n  laneProfit: '50',\n  laneOriginRegion: 'East Asia & Oceania',\n  laneConsigneeName: 'Test',\n  laneDestinationRegion: 'The Americas'\n};\nconst newLaneData = {\n  laneHeaderText: 'Air',\n  originLocationText: '',\n  originLocationCodeText: '',\n  originLocationCountryText: 'Various',\n  destinationLocationText: '',\n  destinationLocationCodeText: '',\n  destinationLocationCountryText: 'Various',\n  volumeText: `${newLaneForm.laneVolume} Tonnes | Revenue: $${(0, _helpers.numberWithCommas)(newLaneForm.laneRevenue)} | Profit: $2,500`\n};\ncy.addLane(newLaneForm).then(xhr => {\n  console.log(xhr.response.body);\n  newLaneId = xhr.response.body;\n  cy.checkLaneAirSeaRoad('air', newLaneId, 'empty', newLaneData);\n});",
+                      "err": {},
+                      "uuid": "acbc41ab-f786-4db1-9174-b6f9d768dc43",
+                      "parentUUID": "69cf9e8c-d1e9-4606-ad05-799a9d4e20f6",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Add Air Lane - With Origin/Destination",
+                      "fullTitle": "Air Lane Air Lane functionality Adding Air Lanes Add Air Lane - With Origin/Destination",
+                      "timedOut": null,
+                      "duration": 19338,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newLaneForm = {\n  laneVolume: '500',\n  laneRevenue: '6000',\n  laneProfit: '10',\n  laneShipperName: 'ShipperNameTest',\n  laneOriginRegion: 'East Asia & Oceania',\n  laneOriginCountry: 'China',\n  laneOriginLocation: 'AAT - Altay Air Base',\n  laneOriginLocationSearch: 'AAT',\n  laneConsigneeName: 'ConsigneeNameTest',\n  laneDestinationRegion: 'The Americas',\n  laneDestinationCountry: 'United States',\n  laneDestinationLocation: 'AAF - Apalachicola Regional Airport',\n  laneDestinationLocationSearch: 'AAF'\n};\nconst newLaneData = {\n  laneHeaderText: 'Air',\n  originLocationText: 'Altay Air Base',\n  originLocationCodeText: 'AAT',\n  originLocationCountryText: 'China',\n  destinationLocationText: 'Apalachicola Regional Airport',\n  destinationLocationCodeText: 'AAF',\n  destinationLocationCountryText: 'United States',\n  volumeText: `${newLaneForm.laneVolume} Tonnes | Revenue: $${(0, _helpers.numberWithCommas)(newLaneForm.laneRevenue)} | Profit: $600`\n};\ncy.addLane(newLaneForm).then(xhr => {\n  console.log(xhr.response.body);\n  newLaneId = xhr.response.body;\n  cy.checkLaneAirSeaRoad('air', newLaneId, 'data', newLaneData);\n});",
+                      "err": {},
+                      "uuid": "d508a7da-3a7f-4ab8-9355-7ee9523e79bd",
+                      "parentUUID": "69cf9e8c-d1e9-4606-ad05-799a9d4e20f6",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Add Air Lane - European Euro",
+                      "fullTitle": "Air Lane Air Lane functionality Adding Air Lanes Add Air Lane - European Euro",
+                      "timedOut": null,
+                      "duration": 14926,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newLaneForm = {\n  laneVolume: '100',\n  laneRevenue: '5000',\n  laneProfit: '50',\n  laneCurrency: 'European Euros',\n  laneOriginRegion: 'East Asia & Oceania',\n  laneConsigneeName: 'Test',\n  laneDestinationRegion: 'The Americas'\n};\nconst newLaneData = {\n  laneHeaderText: 'Air',\n  originLocationText: '',\n  originLocationCodeText: '',\n  originLocationCountryText: 'Various',\n  destinationLocationText: '',\n  destinationLocationCodeText: '',\n  destinationLocationCountryText: 'Various',\n  volumeText: `${newLaneForm.laneVolume} Tonnes | Revenue: €${(0, _helpers.numberWithCommas)(newLaneForm.laneRevenue)} | Profit: €2,500`\n};\ncy.addLane(newLaneForm).then(xhr => {\n  console.log(xhr.response.body);\n  newLaneId = xhr.response.body;\n  cy.checkLaneAirSeaRoad('air', newLaneId, 'empty', newLaneData);\n});",
+                      "err": {},
+                      "uuid": "d59dfae9-0b71-4548-a988-a30f649dac86",
+                      "parentUUID": "69cf9e8c-d1e9-4606-ad05-799a9d4e20f6",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "acbc41ab-f786-4db1-9174-b6f9d768dc43",
+                    "d508a7da-3a7f-4ab8-9355-7ee9523e79bd",
+                    "d59dfae9-0b71-4548-a988-a30f649dac86"
+                  ],
+                  "failures": [],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 48602,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "12ca000f-0fee-43f0-b7ad-3fdb264c0b72",
+                  "title": "editing",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Selecting Edit displays all data on overview and form",
+                      "fullTitle": "Air Lane Air Lane functionality editing Selecting Edit displays all data on overview and form",
+                      "timedOut": null,
+                      "duration": 17593,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newLaneData = {\n  laneHeaderText: 'Air',\n  originLocationText: 'Udorn Air Base',\n  originLocationCodeText: 'BAO',\n  originLocationCountryText: 'Thailand',\n  destinationLocationText: 'San Francisco International Airport',\n  destinationLocationCodeText: 'SFO',\n  destinationLocationCountryText: 'United States',\n  volumeText: `${newLane.volumeAmount} KGs | Revenue: THB${(0, _helpers.numberWithCommas)(newLane.revenue)} | Profit: THB810,000`\n};\nconst newLaneFormData = {\n  currencyPrefix: 'THB',\n  currencyCode: 'Thai Bahts',\n  volumeText: '9000',\n  volumeUnit: 'KGs',\n  revenueText: '1000',\n  profitText: '90',\n  profitUnit: 'Per KG',\n  calculatedRevenue: '810,000',\n  originCompanyName: newCompanyName,\n  originRegionText: 'South East Asia',\n  originCountryText: 'Thailand',\n  originLocationText: 'BAO - Udorn Air Base',\n  destinationCompanyName: 'Google',\n  destinationRegionText: 'The Americas',\n  destinationCountryText: 'United States',\n  destinationLocationText: 'SFO - San Francisco International Airport',\n  content3pl: '',\n  serviceLocationValue: '',\n  specialRequirementsValue: '',\n  barcodeChecked: false,\n  trackAndTraceChecked: false,\n  pickUpChecked: false,\n  laneCommentText: 'Google Woooohoooo'\n};\ncy.checkLaneAirSeaRoad('air', newLaneId, 'data', newLaneData);\ncy.editLane(newLaneId, subscriberId);\ncy.laneFormChecker('air', newLaneFormData);",
+                      "err": {},
+                      "uuid": "6167ba3b-2145-4530-b969-671fe33eda1c",
+                      "parentUUID": "12ca000f-0fee-43f0-b7ad-3fdb264c0b72",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "I must be able to edit and changes save",
+                      "fullTitle": "Air Lane Air Lane functionality editing I must be able to edit and changes save",
+                      "timedOut": null,
+                      "duration": 56586,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newAirLaneInputs = {\n  laneCurrency: 'British Pounds',\n  laneOriginRegion: 'East Asia & Oceania',\n  laneOriginCountry: 'China',\n  laneOriginLocation: 'PEK - Beijing Capital International Airport',\n  laneOriginLocationSearch: 'PEK',\n  laneDestinationRegion: 'Europe, Middle East & Africa',\n  laneDestinationCountry: 'Netherlands',\n  laneDestinationLocation: 'AMS - Amsterdam Airport Schiphol',\n  laneDestinationLocationSearch: 'AMS'\n};\nconst newLaneForm = {\n  laneVolume: '2000',\n  laneRevenue: '88000',\n  laneProfit: '20',\n  laneShipperName: 'Edited Shipper',\n  laneConsigneeName: 'Destination Edit',\n  comment: 'This is a new comment!'\n};\nconst newLaneData = {\n  laneHeaderText: 'Air',\n  originLocationText: 'Beijing Capital International Airport',\n  originLocationCodeText: 'PEK',\n  originLocationCountryText: 'China',\n  destinationLocationText: 'Amsterdam Airport Schiphol',\n  destinationLocationCodeText: 'AMS',\n  destinationLocationCountryText: 'Netherlands',\n  volumeText: `${newLaneForm.laneVolume} KGs | Revenue: £${(0, _helpers.numberWithCommas)(newLaneForm.laneRevenue)} | Profit: £40,000`\n};\ncy.fillForm(_forms.laneForm, newAirLaneInputs);\ncy.addLane(newLaneForm).then(xhr => {\n  cy.checkLaneAirSeaRoad('air', newLaneId, 'data', newLaneData);\n});",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "c0d41c12-bf55-4725-826e-bae6f7d6cab0",
+                      "parentUUID": "12ca000f-0fee-43f0-b7ad-3fdb264c0b72",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "6167ba3b-2145-4530-b969-671fe33eda1c"
+                  ],
+                  "failures": [
+                    "c0d41c12-bf55-4725-826e-bae6f7d6cab0"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 74179,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                },
+                {
+                  "uuid": "866d77b2-5d4c-4a9a-a317-4bea96dbc7e3",
+                  "title": "remove",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "I must be able to remove a Air lane",
+                      "fullTitle": "Air Lane Air Lane functionality remove I must be able to remove a Air lane",
+                      "timedOut": null,
+                      "duration": 72594,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": null,
+                      "code": "const newLaneData = {\n  laneHeaderText: 'Air',\n  originLocationText: 'Copán Ruinas Airport',\n  originLocationCodeText: 'RUY',\n  originLocationCountryText: 'Honduras',\n  destinationLocationText: 'London Heathrow Airport',\n  destinationLocationCodeText: 'LHR',\n  destinationLocationCountryText: 'United Kingdom',\n  volumeText: `${newLane.volumeAmount} Tonnes | Revenue: BTC${newLane.revenue} | Profit: BTC68`\n};\ncy.checkLaneAirSeaRoad('air', newLaneId, 'data', newLaneData);\ncy.editLane(newLaneId, subscriberId);\ncy.deleteLane(newLaneId);",
+                      "err": {
+                        "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                        "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                        "diff": null
+                      },
+                      "uuid": "d1e9b791-e76c-4e8e-8c10-7e1bc2460e7a",
+                      "parentUUID": "866d77b2-5d4c-4a9a-a317-4bea96dbc7e3",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [],
+                  "failures": [
+                    "d1e9b791-e76c-4e8e-8c10-7e1bc2460e7a"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 72594,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

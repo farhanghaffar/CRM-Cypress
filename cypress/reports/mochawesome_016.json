@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T02:18:20.468Z",
+    "end": "2024-03-07T02:18:31.084Z",
+    "duration": 10616,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a00cad39-0775-407d-bc41-81e49e12e930",
+      "title": "",
+      "fullFile": "cypress\\e2e\\navigation\\navBar.spec.js",
+      "file": "cypress\\e2e\\navigation\\navBar.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "155a3167-c553-4080-9aac-4bfc51b628e4",
+          "title": "nav bar",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Nav bar remains expended when toggled off",
+              "fullTitle": "nav bar Nav bar remains expended when toggled off",
+              "timedOut": null,
+              "duration": 5524,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navBarToggleState(1);",
+              "err": {},
+              "uuid": "31f6d2bc-de0c-4758-afaa-c3aa901bf49e",
+              "parentUUID": "155a3167-c553-4080-9aac-4bfc51b628e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Nav bar collapses when toggled on",
+              "fullTitle": "nav bar Nav bar collapses when toggled on",
+              "timedOut": null,
+              "duration": 3356,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navBarToggleState(0);",
+              "err": {},
+              "uuid": "22b71364-aee7-47b4-93b2-792d85413e86",
+              "parentUUID": "155a3167-c553-4080-9aac-4bfc51b628e4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Sliding nav bar not visable in responsive view",
+              "fullTitle": "nav bar Sliding nav bar not visable in responsive view",
+              "timedOut": null,
+              "duration": 1620,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport('iphone-8');\ncy.get('#sidebar').should('not.be.visible');",
+              "err": {},
+              "uuid": "1bcd5ec6-1225-4d05-93b4-a003dd0a59f2",
+              "parentUUID": "155a3167-c553-4080-9aac-4bfc51b628e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "31f6d2bc-de0c-4758-afaa-c3aa901bf49e",
+            "22b71364-aee7-47b4-93b2-792d85413e86",
+            "1bcd5ec6-1225-4d05-93b4-a003dd0a59f2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10500,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

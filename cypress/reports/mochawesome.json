@@ -1,0 +1,277 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-06T22:38:03.478Z",
+    "end": "2024-03-06T22:40:21.204Z",
+    "duration": 137726,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "be007b14-d888-4451-8bcf-120014cce301",
+      "title": "",
+      "fullFile": "cypress\\e2e\\activity\\activity.spec.js",
+      "file": "cypress\\e2e\\activity\\activity.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c3f56e5c-649d-4215-90ba-b5ecb0c6a644",
+          "title": "activity",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "bea66611-03f0-4fea-9d38-d6876e903e70",
+              "title": "events",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "add new event on activity page and displays correctly",
+                  "fullTitle": "activity events add new event on activity page and displays correctly",
+                  "timedOut": null,
+                  "duration": 41180,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const newEvent = {\n  eventTitle,\n  eventType: 'Meeting External',\n  eventLocation: 'Los Angeles',\n  // eventStartDate: moment().format('DD-MMM-YY'),\n  // eventEndDate: moment().format('DD-MMM-YY'),\n  eventStartTime: '11:00pm',\n  eventEndTime: '11:30pm',\n  eventReminder: '5 Minutes'\n};\ncy.intercept({\n  method: 'POST',\n  url: '/api/CalendarEvent/SaveCalendarEvent'\n}).as('newCalID');\ncy.intercept({\n  method: 'POST',\n  url: `/api/DropDown/GetCampaigns`\n}).as('getCampains');\ncy.intercept({\n  method: \"post\",\n  url: \"/api/Activity/GetActivitiesForCalendar\"\n}).as('getEvents');\ncy.get('#btnAddEvent[data-action=\"add-event\"]').click({\n  force: true\n});\ncy.wait('@getCampains');\ncy.fillForm(_forms.eventForm, newEvent);\ncy.addNewCompanyToEvent(companyName);\ncy.addNewDealToEvent(newDealName);\ncy.saveEvent();\ncy.wait('@newCalID', {\n  timeout: 120000\n}).then(xhr => {\n  eventID = xhr.response.body;\n  const event = {\n    eventId: xhr.response.body,\n    eventTitle: (0, _helpers.convertFirstCharOfStringToUpperCase)(newEvent.eventTitle),\n    // eventDate: moment().format('ddd, DD-MMM-YY'),\n    eventTime: '11:00 pm',\n    eventLocation: newEvent.eventLocation,\n    eventCompany: companyName,\n    eventCat: newEvent.eventType,\n    eventDeals: newDealName\n  };\n  cy.wait('@getEvents', {\n    timeout: 180000\n  });\n  cy.checkEventOverview(event);\n});",
+                  "err": {},
+                  "uuid": "e066e6a5-452b-4a2e-9c05-423c22df4a74",
+                  "parentUUID": "bea66611-03f0-4fea-9d38-d6876e903e70",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Select and edit event",
+                  "fullTitle": "activity events Select and edit event",
+                  "timedOut": null,
+                  "duration": 17732,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const changeEvent = {\n  eventTitle: editedTitle,\n  eventType: 'Private / Holiday',\n  eventLocation: 'Manchester',\n  // eventStartDate: moment().format('DD-MMM-YY'),\n  // eventEndDate: moment().format('DD-MMM-YY'),\n  eventStartTime: '9:00am',\n  eventEndTime: '11:00am'\n};\nconst modalData = {\n  eventName: (0, _helpers.convertFirstCharOfStringToUpperCase)(eventTitle),\n  type: 'edit'\n};\ncy.intercept({\n  url: `/api/CalendarEvent/GetCalendarEvent?calendarEventId=${eventID}&userId=${salesRepUserId}&subscriberId=${subscriberId}`,\n  method: 'GET'\n}).as('getEvent');\ncy.intercept({\n  method: 'POST',\n  url: '/api/CalendarEvent/SaveCalendarEvent'\n}).as('newCalID');\ncy.intercept({\n  method: 'POST',\n  url: '/api/calendarevent/GetCompanyCalendarEvents'\n}).as('companyEvents');\ncy.intercept({\n  method: \"post\",\n  url: \"/api/Task/GetTasks\"\n}).as('getTasks');\ncy.intercept({\n  method: \"post\",\n  url: \"/api/Activity/GetActivitiesForCalendar\"\n}).as('getEvents');\ncy.selectEventFromActivity((0, _helpers.convertFirstCharOfStringToUpperCase)(eventTitle));\ncy.wait('@getEvent');\ncy.viewEventModalOverviewEditClose(modalData); // cy.selectEventNameBasedOnType(true, eventID)\ncy.wait('@getEvent');\ncy.fillForm(_forms.eventForm, changeEvent);\ncy.saveEvent();\ncy.wait('@newCalID', {\n  timeout: 120000\n}).then(xhr => {\n  cy.wait('@getEvents', {\n    timeout: 180000\n  });\n  eventID = xhr.response.body;\n});\nconst event = {\n  eventId: eventID,\n  eventTitle: (0, _helpers.convertFirstCharOfStringToUpperCase)(changeEvent.eventTitle),\n  // eventDate: moment().format('ddd, DD-MMM-YY'),\n  eventTime: '9:00 am',\n  eventLocation: changeEvent.eventLocation,\n  eventCompany: companyName,\n  eventCat: changeEvent.eventType,\n  eventUser: salesRepName,\n  eventDeals: newDealName\n};\ncy.checkEventOverview(event);",
+                  "err": {},
+                  "uuid": "f573adb4-472a-4ddd-9e12-82ba2cbbdbb9",
+                  "parentUUID": "bea66611-03f0-4fea-9d38-d6876e903e70",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "delete event",
+                  "fullTitle": "activity events delete event",
+                  "timedOut": null,
+                  "duration": 13676,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const modalData = {\n  eventName: (0, _helpers.convertFirstCharOfStringToUpperCase)(editedTitle),\n  type: 'edit'\n};\ncy.intercept({\n  url: `/api/CalendarEvent/GetCalendarEvent?calendarEventId=${eventID}&userId=${salesRepUserId}&subscriberId=${subscriberId}`,\n  method: 'GET'\n}).as('getEvent');\ncy.intercept({\n  url: `/api/CalendarEvent/DeleteCalendarEvent/?calendarEventId=${eventID}&deleteRecurring=false&userId=${salesRepUserId}&subscriberId=${subscriberId}&cancellationEmails=false`,\n  method: 'GET'\n}).as('deleteEvent');\ncy.intercept({\n  method: 'POST',\n  url: '/api/calendarevent/GetCompanyCalendarEvents'\n}).as('companyEvents');\ncy.selectEventFromActivity(modalData.eventName);\ncy.wait('@getEvent');\ncy.viewEventModalOverviewEditClose(modalData); // cy.selectEventNameBasedOnType(true, eventID)\ncy.wait('@getEvent');\ncy.wait(3000);\ncy.get('.text-danger.delete-btn.secondary-btn[data-action=\"delete-event\"]').click();\ncy.deleteModal('Delete Event!', 'Are you sure you want to delete this event?', 'delete');\ncy.wait('@deleteEvent');\ncy.get('#events-list-data-grid').should('not.contain', modalData.editedTitle);",
+                  "err": {},
+                  "uuid": "ee5f2c4c-3097-4f73-84d8-4b7241a8da8c",
+                  "parentUUID": "bea66611-03f0-4fea-9d38-d6876e903e70",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "no events show correct messages",
+                  "fullTitle": "activity events no events show correct messages",
+                  "timedOut": null,
+                  "duration": 10674,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const noEventsSelector = '#overlay_events > .no-items';\ncy.intercept('/api/Activity/GetActivitiesForCalendar', '[]');\ncy.reload();\ncy.get(noEventsSelector).should('be.visible');\ncy.get(`${noEventsSelector} .no-items-icon.icon-calendar`).should('be.visible');\ncy.get(`${noEventsSelector} .no-items-text`).should('be.visible').and('have.text', 'no events');",
+                  "err": {},
+                  "uuid": "33703209-e44d-4b8e-b262-c5c6b2b78672",
+                  "parentUUID": "bea66611-03f0-4fea-9d38-d6876e903e70",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e066e6a5-452b-4a2e-9c05-423c22df4a74",
+                "f573adb4-472a-4ddd-9e12-82ba2cbbdbb9",
+                "ee5f2c4c-3097-4f73-84d8-4b7241a8da8c",
+                "33703209-e44d-4b8e-b262-c5c6b2b78672"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 83262,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f14ef3cd-05a0-416e-b80e-f5d524f65080",
+              "title": "tasks",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Add a task with all data and see on activity page",
+                  "fullTitle": "activity tasks Add a task with all data and see on activity page",
+                  "timedOut": null,
+                  "duration": 22158,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "let newTask = {\n  taskTitle: newTaskTitle,\n  taskDescription: 'Test Task Description',\n  taskDueDate: (0, _moment.default)().add(1, 'days').format('MM/DD/YYYY'),\n  taskCompany: companyName,\n  taskCompanySearch: companyName,\n  taskDeal: newDealName,\n  taskDealSearch: newDealName,\n  taskContact: newContactName,\n  taskContactSearch: `AAA ${newContactName}`\n};\ncy.intercept({\n  url: '/api/task/SaveTask',\n  method: 'POST'\n}).as('saveTask');\ncy.intercept({\n  method: 'POST',\n  url: '/api/Task/GetTasks'\n}).as('getTasks');\ncy.log(newDealName);\ncy.get('.add[data-action=\"add-task\"]').click();\ncy.fillForm(_forms.taskFormCal, newTask);\ncy.wait(2000);\ncy.get('#TaskAddEdit_btnTaskAdd').click();\ncy.wait('@saveTask').then(xhr => {\n  taskId = xhr.response.body;\n  cy.wait('@getTasks');\n  const taskData = {\n    taskId: xhr.response.body,\n    title: (0, _helpers.convertFirstCharOfStringToUpperCase)(newTask.taskTitle),\n    dueDate: (0, _moment.default)().add(1, 'days').format('ddd, DD-MMM-YY'),\n    company: companyName,\n    contact: newContactName,\n    deal: newDealName\n  };\n  cy.checkTaskOverview(taskData);\n});",
+                  "err": {},
+                  "uuid": "42bbf2a8-aaed-460a-8ca1-0b5f47ca4a9d",
+                  "parentUUID": "f14ef3cd-05a0-416e-b80e-f5d524f65080",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Select task and edit",
+                  "fullTitle": "activity tasks Select task and edit",
+                  "timedOut": null,
+                  "duration": 14557,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const changeTask = {\n  taskTitle: `Task - ${(0, _helpers.numGen)(7)}`,\n  taskDescription: 'Test Task Description',\n  taskDueDate: (0, _moment.default)().add(3, 'days').format('MM/DD/YYYY')\n};\ncy.intercept({\n  url: `/api/Task/GetTask?taskId=${taskId}&subscriberId=${subscriberId}`,\n  method: 'GET'\n}).as('getTask');\ncy.intercept({\n  url: '/api/task/SaveTask',\n  method: 'POST'\n}).as('saveTask');\ncy.intercept({\n  method: 'POST',\n  url: '/api/Task/GetTasks'\n}).as('getTasks');\ncy.selectTaskFromActivity((0, _helpers.convertFirstCharOfStringToUpperCase)(newTaskTitle));\ncy.wait('@getTask');\ncy.fillForm(_forms.taskFormCal, changeTask);\ncy.get('#TaskAddEdit_btnTaskAdd').click();\ncy.wait('@saveTask').then(xhr => {});\ncy.wait('@getTasks');\nconst taskData = {\n  taskId,\n  title: changeTask.taskTitle,\n  dueDate: (0, _moment.default)().add(3, 'days').format('ddd, DD-MMM-YY'),\n  company: companyName,\n  contact: newContactName,\n  deal: newDealName\n};\ncy.checkTaskOverview(taskData);",
+                  "err": {},
+                  "uuid": "6ad358d8-c4b2-4d82-b81c-c031ae95bc2b",
+                  "parentUUID": "f14ef3cd-05a0-416e-b80e-f5d524f65080",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Mark Task as complete",
+                  "fullTitle": "activity tasks Mark Task as complete",
+                  "timedOut": null,
+                  "duration": 6617,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// SKIPPED AS I NEED UNIQUE IDENTIFIER FOR EACH TASK [data-id=\"${taskId}\"]\ncy.intercept({\n  url: `/api/task/ToggleTaskCompleted/?&taskId=${taskId}&state=true&userId=${salesRepUserId}&subscriberId=${subscriberId}`,\n  method: 'GET'\n}).as('taskComplete');\ncy.intercept({\n  method: 'POST',\n  url: '/api/Task/GetTasks'\n}).as('getTasks');\ncy.intercept('/api/Toast/GetOverdueToasts/').as('getOverdueToasts');\ncy.activityMarkTaskComplete(taskId);\ncy.wait('@taskComplete'); // cy.successModal('Task Status: Completed')\ncy.wait('@getOverdueToasts');\ncy.get(`.row-wrapper[data-activity-id=\"${taskId}\"]`).should('not.exist');\ncy.deleteTaskAPI(taskId, salesRepGlobalUserId, subscriberId);",
+                  "err": {},
+                  "uuid": "4e100b83-7f33-4083-991f-b3a003e99a0a",
+                  "parentUUID": "f14ef3cd-05a0-416e-b80e-f5d524f65080",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "no tasks shows correct message",
+                  "fullTitle": "activity tasks no tasks shows correct message",
+                  "timedOut": null,
+                  "duration": 6589,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const noEventsSelector = '#overlay_tasks > .no-items';\ncy.intercept('/api/Task/GetTasks', '[]');\ncy.reload();\ncy.get(noEventsSelector).should('be.visible');\ncy.get(`${noEventsSelector} .no-items-icon.icon-task`).should('be.visible');\ncy.get(`${noEventsSelector} .no-items-text`).should('be.visible').and('have.text', 'no tasks');",
+                  "err": {},
+                  "uuid": "c3717106-b643-4bb0-9e3c-4988696da58c",
+                  "parentUUID": "f14ef3cd-05a0-416e-b80e-f5d524f65080",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "42bbf2a8-aaed-460a-8ca1-0b5f47ca4a9d",
+                "6ad358d8-c4b2-4d82-b81c-c031ae95bc2b",
+                "4e100b83-7f33-4083-991f-b3a003e99a0a",
+                "c3717106-b643-4bb0-9e3c-4988696da58c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 49921,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

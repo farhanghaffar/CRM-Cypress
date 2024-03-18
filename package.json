@@ -1,0 +1,66 @@
+{
+  "name": "firstfreight-test",
+  "version": "0.0.1",
+  "description": "Tests for FirstFreight",
+  "main": "index.js",
+  "files": [
+    "app",
+    "cypress"
+  ],
+  "scripts": {
+    "build": "npm run lint && npm run types && npm run stop-only",
+    "types": "tsc --noEmit",
+    "test": "cypress run",
+    "pretest": "npm run lint && npm run types",
+    "print-env": "print-env",
+    "lint": "eslint --fix cypress/**/*.js",
+    "lint:yaml": "yamllint '*.yml' 'basic/*.yml' .buildkite/pipeline.yml .semaphore/semaphore.yml '.github/workflows/*.yml'",
+    "e2e": "cypress run",
+    "e2e:chrome": "cypress run --browser chrome",
+    "e2e:record": "cypress run --record",
+    "e2e:record:parallel": "cypress run --record --parallel",
+    "cy:verify": "cypress verify",
+    "cy:version": "cypress version",
+    "cy:run": "cypress run",
+    "cy:run:record:dev": "npm run clean-reports; cypress run --record --key cd7d854d-2f17-46b2-9042-6e491ac5b193 --config baseUrl=https://develop.firstfreight.com/ --headless --browser chrome",
+    "cy:run:record:live": "npm run clean-reports; cypress run --record --key cd7d854d-2f17-46b2-9042-6e491ac5b193 --config baseUrl=https://crm.firstfreight.com/ --headless --browser chrome && merge:reports && generate:report",
+    "cy:open": "cypress open",
+    "clean-reports": "rm -rf cypress/reports",
+    "merge:reports": "mochawesome-merge 'cypress/reports/*.json' > mochawesome.json",
+    "generate:report": "marge mochawesome.json --reportFilename index.html",
+    "test:teardown": "node utils/post_test_scripts.js",
+    "jesse": "npx cypress open --config baseUrl=https://localhost:44391/"
+  },
+  "author": "Thomas Dowling",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "10.2.0",
+    "mochawesome": "6.1.0",
+    "mochawesome-merge": "4.0.3",
+    "mochawesome-report-generator": "5.1.0",
+    "moment": "2.29.4",
+    "npm-run-all": "^4.1.2",
+    "serve": "14.1.2"
+  },
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "2.2.5",
+    "@bahmutov/print-env": "1.2.0",
+    "blueimp-file-upload": "10.7.0",
+    "colon-names": "1.0.0",
+    "cypress": "10.8.0",
+    "cypress-social-logins": "1.1.1",
+    "eslint": "5.16.0",
+    "eslint-plugin-mocha": "5.3.0",
+    "globby": "9.1.0",
+    "moment-timezone": "0.5.35",
+    "nodemailer": "6.6.1",
+    "start-server-and-test": "1.10.6",
+    "stop-build": "1.1.0",
+    "stop-only": "3.1.0",
+    "typescript": "3.6.4",
+    "yaml-lint": "1.7.0"
+  },
+  "engines": {
+    "node": ">=4"
+  }
+}

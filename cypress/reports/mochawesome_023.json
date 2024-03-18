@@ -1,0 +1,220 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T02:36:33.047Z",
+    "end": "2024-03-07T02:36:57.768Z",
+    "duration": 24721,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7d8642c9-33c0-40cf-8f18-53967a0ff8c7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\locations\\locations.districts.spec.js",
+      "file": "cypress\\e2e\\admin\\locations\\locations.districts.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ce8d6ea-ef7f-4dd6-a91d-c0f367ca5108",
+          "title": "locations.districts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "27059252-21cd-4e2a-b5d1-5844ab9f8ca4",
+              "title": "districts validation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "district code and country are required",
+                  "fullTitle": "locations.districts districts validation district code and country are required",
+                  "timedOut": null,
+                  "duration": 3941,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.saveForm();\ncy.districtFormValidationChecker();",
+                  "err": {},
+                  "uuid": "8ac6a08e-7bf5-438f-a890-872c54c93e08",
+                  "parentUUID": "27059252-21cd-4e2a-b5d1-5844ab9f8ca4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "close districts form",
+                  "fullTitle": "locations.districts districts validation close districts form",
+                  "timedOut": null,
+                  "duration": 1230,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.cancelForm();\ncy.get('#divDistrictsTab').should('be.visible');",
+                  "err": {},
+                  "uuid": "bc08a0b8-5af1-4b9f-952e-aa780f823798",
+                  "parentUUID": "27059252-21cd-4e2a-b5d1-5844ab9f8ca4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8ac6a08e-7bf5-438f-a890-872c54c93e08",
+                "bc08a0b8-5af1-4b9f-952e-aa780f823798"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5171,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "cc904bcd-fe50-4fad-859c-353988eca832",
+              "title": "districts functionality",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "i must be able to add a district",
+                  "fullTitle": "locations.districts districts functionality i must be able to add a district",
+                  "timedOut": null,
+                  "duration": 4478,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept('/api/district/SaveDistrict').as('saveDistrict');\nconst newDistrict = {\n  districtName: `DISTRICT ${(0, _helpers.stringGen)(10)}`,\n  districtCode: (0, _helpers.stringGen)(3),\n  districtCountry: 'United Kingdom'\n};\ncy.openDistrictsForm();\ncy.fillForm(_forms.locationDistrictForm, newDistrict);\ncy.saveForm();\ncy.wait('@saveDistrict').then(xhr => {\n  const districtId = xhr.response.body;\n  cy.checkDistrictsOverview(districtId, newDistrict);\n  cy.removeDistrictAPI(districtId, userData);\n});",
+                  "err": {},
+                  "uuid": "ed5109ac-cbc4-40b6-896c-97cdddfd4ecf",
+                  "parentUUID": "cc904bcd-fe50-4fad-859c-353988eca832",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "i must be able to edit a district",
+                  "fullTitle": "locations.districts districts functionality i must be able to edit a district",
+                  "timedOut": null,
+                  "duration": 8251,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const districtData = {\n  districtName: (0, _helpers.stringGen)(13),\n  districtCode: (0, _helpers.numGen)(4),\n  countryName: 'United Kingdom'\n};\ncy.addDistrictAPI(userData, districtData).then(response => {\n  const districtId = response.body;\n  cy.navigateAndCheckURL(_urls.LOCATION_URL);\n  cy.selectLocationTab('districs');\n  cy.viewAndSelectEditDistrict(districtId, districtData.districtName);\n  const editForm = {\n    districtName: `DISTRICT ${(0, _helpers.stringGen)(10)}`,\n    districtCode: (0, _helpers.stringGen)(3),\n    districtCountry: 'United Kingdom'\n  };\n  cy.fillForm(_forms.locationDistrictForm, editForm);\n  cy.saveForm();\n  cy.checkDistrictsOverview(districtId, editForm);\n  cy.removeDistrictAPI(districtId, userData);\n});",
+                  "err": {},
+                  "uuid": "08a31b23-db0f-447a-bbf4-f76c30c9d936",
+                  "parentUUID": "cc904bcd-fe50-4fad-859c-353988eca832",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "i must be able to delete a district",
+                  "fullTitle": "locations.districts districts functionality i must be able to delete a district",
+                  "timedOut": null,
+                  "duration": 6511,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const districtData = {\n  districtName: (0, _helpers.stringGen)(8),\n  districtCode: (0, _helpers.numGen)(3),\n  countryName: 'United Kingdom'\n};\ncy.addDistrictAPI(userData, districtData).then(response => {\n  const districtId = response.body;\n  cy.intercept(`/api/district/deletedistrict/?districtid=${districtId}&userId=${crmAdminUserId}&subscriberId=${subscriberId}`).as('deleteDistrict');\n  cy.navigateAndCheckURL(_urls.LOCATION_URL);\n  cy.selectLocationTab('districs');\n  cy.viewAndSelectEditDistrict(districtId, districtData.districtName);\n  cy.deleteForm();\n  cy.deleteModal('Delete District!', 'Are you sure you want to delete this district?', 'delete');\n  cy.wait('@deleteDistrict');\n  cy.districtNotOnOverview(districtId, districtData.districtName);\n});",
+                  "err": {},
+                  "uuid": "6cb9c0f3-b227-4b5e-88da-b40cbe30ebd6",
+                  "parentUUID": "cc904bcd-fe50-4fad-859c-353988eca832",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ed5109ac-cbc4-40b6-896c-97cdddfd4ecf",
+                "08a31b23-db0f-447a-bbf4-f76c30c9d936",
+                "6cb9c0f3-b227-4b5e-88da-b40cbe30ebd6"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 19240,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T02:49:49.169Z",
+    "end": "2024-03-07T02:51:07.210Z",
+    "duration": 78041,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "800d4fef-06d0-4a8e-9a07-4ad1f83de32f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\settings\\settings.sales-stages.spec.js",
+      "file": "cypress\\e2e\\admin\\settings\\settings.sales-stages.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea1118b0-c0d2-44f1-b0bd-b20580c1c335",
+          "title": "settings.sales-stages",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list sales stages",
+              "fullTitle": "settings.sales-stages should list sales stages",
+              "timedOut": null,
+              "duration": 4123,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.get(salesStageHeader).click();\ncy.get(salesStageContainer).find('tr').should('have.length.gte', 4);",
+              "err": {},
+              "uuid": "759660a6-3ee9-4864-8b32-c28c5d86954a",
+              "parentUUID": "ea1118b0-c0d2-44f1-b0bd-b20580c1c335",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add and remove sales stages",
+              "fullTitle": "settings.sales-stages should add and remove sales stages",
+              "timedOut": null,
+              "duration": 28320,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const uniqueString = (0, _helpers.stringGen)(5);\nconst salesStageName = `Test Sales Stage_${uniqueString}`;\nconst addedSalesStage = getNewSalesStage(salesStageName);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.addAndRemoveSettings(salesStageHeader, newSalesStage, addSalesStage, addedSalesStage, salesStageName, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "f6f5a564-c0a9-455e-8abe-49f8f5e35222",
+              "parentUUID": "ea1118b0-c0d2-44f1-b0bd-b20580c1c335",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should edit sales stages",
+              "fullTitle": "settings.sales-stages should edit sales stages",
+              "timedOut": null,
+              "duration": 45496,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const initialRandomString = `SS_${(0, _helpers.stringGen)(9)}`;\nconst editRandomString = (0, _helpers.stringGen)(8);\nconst initialRandomStringSelector = getNewSalesStage(initialRandomString);\nconst editRandomStringSelector = getNewSalesStage(editRandomString);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.editAndRemoveSettings(salesStageHeader, newSalesStage, addSalesStage, initialRandomString, editRandomString, initialRandomStringSelector, editRandomStringSelector, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "0aadd45b-1d90-4f2e-966c-855017955a93",
+              "parentUUID": "ea1118b0-c0d2-44f1-b0bd-b20580c1c335",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "759660a6-3ee9-4864-8b32-c28c5d86954a",
+            "f6f5a564-c0a9-455e-8abe-49f8f5e35222",
+            "0aadd45b-1d90-4f2e-966c-855017955a93"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 77939,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

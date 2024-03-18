@@ -1,0 +1,152 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2024-03-07T02:54:09.147Z",
+    "end": "2024-03-07T02:56:07.006Z",
+    "duration": 117859,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "38cfcb82-bd18-4ca2-9ec3-5ccf783cf776",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\user\\users.spec.js",
+      "file": "cypress\\e2e\\admin\\user\\users.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5b317914-ca57-4323-904d-f31018bbabc2",
+          "title": "users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list users",
+              "fullTitle": "users should list users",
+              "timedOut": null,
+              "duration": 3145,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h1').contains('Users');\ncy.get('.row-wrapper[data-cypress-id]').should('have.length.gte', 2);",
+              "err": {},
+              "uuid": "38c7a248-7e25-4c75-84f8-8ce5c547de32",
+              "parentUUID": "5b317914-ca57-4323-904d-f31018bbabc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should search users and find one result",
+              "fullTitle": "users should search users and find one result",
+              "timedOut": null,
+              "duration": 57828,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const salesRep = users['salesRep'];\nconst searchTerm = salesRep.details.name;\nconst globalUserId = salesRep.globalUserId;\ncy.searchResults(searchTerm);\ncy.get('.row-wrapper[data-cypress-id]').should('have.length', 1);\ncy.get(`.row-wrapper[data-cypress-id=\"${globalUserId}\"]`).contains('Brendon Hartley');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                "diff": null
+              },
+              "uuid": "346bbb06-7f38-4b8a-b438-0d9fc2c776db",
+              "parentUUID": "5b317914-ca57-4323-904d-f31018bbabc2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should search users and find no results",
+              "fullTitle": "users should search users and find no results",
+              "timedOut": null,
+              "duration": 56811,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const searchTerm = 'rhrhhfhfhjhj';\ncy.searchResults(searchTerm);\ncy.get('.row-wrapper[data-cypress-id]').should('have.length', 0);\ncy.get('.data-grid-overlay-noItems').contains('No Users');",
+              "err": {
+                "message": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.",
+                "estack": "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:144115:81\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6440:41\n    at tryCatcher (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://develop.firstfreight.com/__cypress/runner/cypress_runner.js:5904:14)",
+                "diff": null
+              },
+              "uuid": "c9b04443-d107-43ce-883a-fadae7ccf75c",
+              "parentUUID": "5b317914-ca57-4323-904d-f31018bbabc2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "38c7a248-7e25-4c75-84f8-8ce5c547de32"
+          ],
+          "failures": [
+            "346bbb06-7f38-4b8a-b438-0d9fc2c776db",
+            "c9b04443-d107-43ce-883a-fadae7ccf75c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 117784,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

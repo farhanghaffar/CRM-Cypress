@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 3,
+    "failures": -2,
+    "start": "2024-03-07T02:52:36.398Z",
+    "end": "2024-03-07T02:52:36.418Z",
+    "duration": 20,
+    "testsRegistered": 3,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "511a0922-7b33-4fa1-bd3e-dc4ee90abfe3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\settings\\settings.tags.spec.js",
+      "file": "cypress\\e2e\\admin\\settings\\settings.tags.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "efbe330f-66cd-405d-9308-b7f239966e39",
+          "title": "settings.tags",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list tags",
+              "fullTitle": "settings.tags should list tags",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "3edc441a-7a8d-429a-9fd2-6cc1d7614e9a",
+              "parentUUID": "efbe330f-66cd-405d-9308-b7f239966e39",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add and remove tags",
+              "fullTitle": "settings.tags should add and remove tags",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "76aae7e3-975d-491f-8422-0042c8e3af75",
+              "parentUUID": "efbe330f-66cd-405d-9308-b7f239966e39",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should edit tags",
+              "fullTitle": "settings.tags should edit tags",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "8b436f12-c9fc-4e9d-90eb-ad1fb685ea24",
+              "parentUUID": "efbe330f-66cd-405d-9308-b7f239966e39",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "3edc441a-7a8d-429a-9fd2-6cc1d7614e9a",
+            "76aae7e3-975d-491f-8422-0042c8e3af75",
+            "8b436f12-c9fc-4e9d-90eb-ad1fb685ea24"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

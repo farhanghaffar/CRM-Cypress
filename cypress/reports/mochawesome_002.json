@@ -1,0 +1,258 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-06T22:58:28.859Z",
+    "end": "2024-03-06T22:59:07.250Z",
+    "duration": 38391,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "950dc510-b5d2-4c3d-adba-4c2aed573b5b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\companies\\companies-languages.spec.js",
+      "file": "cypress\\e2e\\companies\\companies-languages.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f9cff1e5-9f19-46db-be6a-3a05c9033eae",
+          "title": "company-language-translation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "5d3e2328-5e17-46cb-8b53-5e77f616d936",
+              "title": "company-list-language-translation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "header options translated to Spanish",
+                  "fullTitle": "company-language-translation company-list-language-translation header options translated to Spanish",
+                  "timedOut": null,
+                  "duration": 14094,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "optionTranslatedToSpanish('.page-title', 'Compañías');\noptionTranslatedToSpanish('#btnGlobal > span', 'Global');\noptionTranslatedToSpanish('#btnAddCompany > span', 'Empresa'); //placeholders\nplaceholdersTranslatedToSpanish('#txtKeyword', 'Buscar');\ncy.get('#select2-ddlCountry-container > .select2-selection__placeholder').should('have.text', 'Pais');\nplaceholdersTranslatedToSpanish('#txtCity', 'Ciudad');\nplaceholdersTranslatedToSpanish('#txtPostalCode', 'Codigo Postal');",
+                  "err": {},
+                  "uuid": "de0087b8-d560-426d-97bf-6fa491dd51ac",
+                  "parentUUID": "5d3e2328-5e17-46cb-8b53-5e77f616d936",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "table headers translated to Spanish",
+                  "fullTitle": "company-language-translation company-list-language-translation table headers translated to Spanish",
+                  "timedOut": null,
+                  "duration": 151,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "optionTranslatedToSpanish('.header-wrap [data-col-id=\"name\"]', 'Nombre');\noptionTranslatedToSpanish('.header-wrap [data-col-id=\"city\"]', 'Ciudad');\noptionTranslatedToSpanish('.header-wrap [data-col-id=\"country\"]', 'Pais');\noptionTranslatedToSpanish('.header-wrap [data-col-id=\"salesTeam\"]', 'Equipo de ventas');\noptionTranslatedToSpanish('.header-wrap [data-col-id=\"lastActivity\"]', 'Última Actividad');\noptionTranslatedToSpanish('.header-wrap [data-col-id=\"nextActivity\"]', 'Actividad Siguiente');",
+                  "err": {},
+                  "uuid": "571605cb-3bcd-4b2c-8421-690577359369",
+                  "parentUUID": "5d3e2328-5e17-46cb-8b53-5e77f616d936",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "de0087b8-d560-426d-97bf-6fa491dd51ac",
+                "571605cb-3bcd-4b2c-8421-690577359369"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 14245,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "075614df-566f-4a62-a105-b320e8a4a127",
+              "title": "company-view-language-translation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "breadcrumb translated to Spanish",
+                  "fullTitle": "company-language-translation company-view-language-translation breadcrumb translated to Spanish",
+                  "timedOut": null,
+                  "duration": 12065,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "optionTranslatedToSpanish('.bread_crumb > a', 'Compañías');\noptionTranslatedToSpanish('.bread_crumb > span:nth-of-type(2)', 'Detalle de la empresa');",
+                  "err": {},
+                  "uuid": "f6e86235-7f66-4d59-9820-615852769cb4",
+                  "parentUUID": "075614df-566f-4a62-a105-b320e8a4a127",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "headers translated to Spanish",
+                  "fullTitle": "company-language-translation company-view-language-translation headers translated to Spanish",
+                  "timedOut": null,
+                  "duration": 144,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "optionTranslatedToSpanish('.desktop-panel-nav li > a#aOverview > span', 'Visión general');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"deals\"] span', 'Ofertas');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"events\"] span', 'Eventos');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"tasks\"] span', 'Tareas');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"notes\"] span', 'Notas');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"documents\"] span', 'Documentos');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"contacts\"] span', 'Contactos');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"messaging\"] span', 'Mensajes');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"salesteam\"] span', 'Equipo de ventas');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"activity\"] span', 'Activity Log');\noptionTranslatedToSpanish('.desktop-panel-nav [data-type=\"relatedcompanies\"] span', 'Compañías relacionadas');",
+                  "err": {},
+                  "uuid": "22218d41-ff13-468a-a29b-fd8c7b86cc84",
+                  "parentUUID": "075614df-566f-4a62-a105-b320e8a4a127",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "details widget translated to Spanish",
+                  "fullTitle": "company-language-translation company-view-language-translation details widget translated to Spanish",
+                  "timedOut": null,
+                  "duration": 81,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "optionTranslatedToSpanish('.detail-card h3 span', 'Detalles');\noptionTranslatedToSpanish('#lblCompanyCodeHeader', 'Codigo de compañia');\noptionTranslatedToSpanish('.detail-card .inner-wrp:nth-of-type(2) > div.card-label', 'Origen');\noptionTranslatedToSpanish('.detail-card .inner-wrp:nth-of-type(3) > div.card-label', 'Tipo');\noptionTranslatedToSpanish('.detail-card .inner-wrp:nth-of-type(4) > div.card-label', 'Industria');\noptionTranslatedToSpanish('.detail-card .inner-wrp:nth-of-type(5) > div.card-label', 'Perfil actualizado');\noptionTranslatedToSpanish('.detail-card .inner-wrp:nth-of-type(6) > div.card-label', 'Creado');\noptionTranslatedToSpanish('.detail-card .inner-wrp:nth-of-type(7) > div.card-label', 'Comentarios');",
+                  "err": {},
+                  "uuid": "c0aae3b5-71b6-4795-9f60-08e35e47f04d",
+                  "parentUUID": "075614df-566f-4a62-a105-b320e8a4a127",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "notes widget translated to Spanish",
+                  "fullTitle": "company-language-translation company-view-language-translation notes widget translated to Spanish",
+                  "timedOut": null,
+                  "duration": 148,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "optionTranslatedToSpanish('.overview-note.note-textarea .btnAddNote', 'Añadir la nota');\nplaceholdersTranslatedToSpanish('.overview-note.note-textarea #txtNote', 'nota');",
+                  "err": {},
+                  "uuid": "1e1518ab-c8ca-49ab-a383-07dda04e6372",
+                  "parentUUID": "075614df-566f-4a62-a105-b320e8a4a127",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "contact widget translated to Spanish",
+                  "fullTitle": "company-language-translation company-view-language-translation contact widget translated to Spanish",
+                  "timedOut": null,
+                  "duration": 24,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "optionTranslatedToSpanish('#divSalesOwnerContainer h3 span', 'Dueño de ventas');",
+                  "err": {},
+                  "uuid": "20694a95-c2c1-4f7b-b98f-3d8a7adfee62",
+                  "parentUUID": "075614df-566f-4a62-a105-b320e8a4a127",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f6e86235-7f66-4d59-9820-615852769cb4",
+                "22218d41-ff13-468a-a29b-fd8c7b86cc84",
+                "c0aae3b5-71b6-4795-9f60-08e35e47f04d",
+                "1e1518ab-c8ca-49ab-a383-07dda04e6372",
+                "20694a95-c2c1-4f7b-b98f-3d8a7adfee62"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 12462,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

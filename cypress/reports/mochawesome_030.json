@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T02:44:14.185Z",
+    "end": "2024-03-07T02:45:30.370Z",
+    "duration": 76185,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b4d045f4-64ee-4246-bb02-1dc717f5f325",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin\\settings\\settings.contact-types.spec.js",
+      "file": "cypress\\e2e\\admin\\settings\\settings.contact-types.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11ea2d15-5622-42ba-800f-c04101fd18cf",
+          "title": "settings.contact-types",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list contact types",
+              "fullTitle": "settings.contact-types should list contact types",
+              "timedOut": null,
+              "duration": 4506,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.get(contactTypeHeader).click();\ncy.get(contactTypeContainer).find('tr').should('have.length.gte', 5);",
+              "err": {},
+              "uuid": "d595e31e-3ec1-424f-b6eb-b22f05b45a3a",
+              "parentUUID": "11ea2d15-5622-42ba-800f-c04101fd18cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add and remove contact types",
+              "fullTitle": "settings.contact-types should add and remove contact types",
+              "timedOut": null,
+              "duration": 26379,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const uniqueString = (0, _helpers.stringGen)(5);\nconst contactTypeName = `TestContact Type_${uniqueString}`;\nconst addedContactType = getNewContactType(contactTypeName);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.addAndRemoveSettings(contactTypeHeader, newContactType, addContactType, addedContactType, contactTypeName, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "171cff00-a602-4013-bc79-add2c1697f72",
+              "parentUUID": "11ea2d15-5622-42ba-800f-c04101fd18cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should edit contact types",
+              "fullTitle": "settings.contact-types should edit contact types",
+              "timedOut": null,
+              "duration": 44491,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const initialRandomString = (0, _helpers.stringGen)(9);\nconst editRandomString = (0, _helpers.stringGen)(8);\nconst initialRandomStringSelector = getNewContactType(initialRandomString);\nconst editRandomStringSelector = getNewContactType(editRandomString);\ncy.navigateAndCheckURL(_urls.SETTINGS_URL);\ncy.editAndRemoveSettings(contactTypeHeader, newContactType, addContactType, initialRandomString, editRandomString, initialRandomStringSelector, editRandomStringSelector, _urls.SETTINGS_URL);",
+              "err": {},
+              "uuid": "810971d4-e242-485e-97f7-a3afa393e1f4",
+              "parentUUID": "11ea2d15-5622-42ba-800f-c04101fd18cf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d595e31e-3ec1-424f-b6eb-b22f05b45a3a",
+            "171cff00-a602-4013-bc79-add2c1697f72",
+            "810971d4-e242-485e-97f7-a3afa393e1f4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 75376,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
